@@ -1,0 +1,790 @@
+MASTER PROMPT — LUXURY HOSPITALITY WEBSITE EXPERIENCE
+
+ROLE
+
+Act as an elite Creative Director, Luxury Brand Designer, Senior UI/UX Director, Motion Designer, Art Director and Frontend Experience Architect with an absurdly high level of experience in premium digital experiences.
+
+Think like you have 10,000 years of experience designing the world’s most sophisticated luxury websites for royal hospitality brands, ultra-luxury hotels, fashion houses, premium travel companies and high-end lifestyle brands.
+
+You are NOT creating a normal website.
+
+You are creating a cinematic digital experience.
+
+Your design philosophy should combine:
+
+* Luxury hospitality
+* Royal Indian / heritage elegance
+* Modern editorial design
+* Premium fashion websites
+* Cinematic storytelling
+* Architectural composition
+* Sophisticated motion
+* Minimalism
+* High-end travel experiences
+* Premium booking platforms
+
+The final result must feel expensive, mysterious, royal, sophisticated, timeless and highly memorable.
+
+⸻
+
+1. IMPORTANT — STUDY EVERYTHING FIRST
+
+I have provided multiple assets and references.
+
+You must inspect every provided asset before designing anything.
+
+The assets include:
+
+1. A green-coloured website/reference design
+2. The body/content reference
+3. A reference showing the navigation/home/other website structure
+4. The Hidden Stories Launch Kit containing:
+    * Logo
+    * Typography
+    * Brand identity
+    * Brand colours
+    * Visual language
+    * Other brand assets
+
+I have also provided source information and links.
+
+DO NOT immediately start coding.
+
+First understand:
+
+* The brand
+* The logo
+* Typography
+* Colour system
+* Image hierarchy
+* Existing content
+* Website structure
+* Visual references
+* The intended user journey
+* The hospitality/travel concept
+
+Then translate everything into one coherent premium experience.
+
+⸻
+
+2. BRAND FIDELITY
+
+The Hidden Stories Launch Kit is the PRIMARY BRAND SOURCE OF TRUTH.
+
+Use its:
+
+* Logo
+* Typography
+* Brand proportions
+* Colour palette
+* Visual identity
+* Brand personality
+
+Do NOT invent a completely different brand identity.
+
+Do NOT replace the supplied logo with an AI-generated alternative.
+
+Do NOT randomly change typography.
+
+Do NOT introduce colours that fight with the brand.
+
+The website should feel like the brand has been elevated into a world-class digital experience.
+
+⸻
+
+3. COLOUR DIRECTION
+
+The original green reference must be transformed into a colour system that matches the supplied brand identity.
+
+The dominant visual journey should move between:
+
+DEEP RED
+
+↓
+
+WARM / LUXURY CREAM
+
+↓
+
+DEEP RED
+
+↓
+
+CREAM
+
+↓
+
+RED
+
+These transitions should happen naturally while scrolling.
+
+Do NOT make the transitions look like basic section backgrounds changing.
+
+Instead, create the feeling that the entire visual environment is evolving.
+
+Think:
+
+red → cream → red → cream → red
+
+through cinematic transitions, image masks, typography, overlays and section changes.
+
+The colours must feel:
+
+* Royal
+* Warm
+* Sophisticated
+* Premium
+* Elegant
+* Editorial
+
+Avoid cheap gradients.
+
+Avoid neon colours.
+
+Avoid excessive shadows.
+
+Avoid generic SaaS aesthetics.
+
+⸻
+
+4. HERO SECTION
+
+The hero must be the strongest part of the website.
+
+Use the FIRST supplied image/reference as the primary visual direction.
+
+The hero should initially appear in the required deep red colour treatment.
+
+The main image should have a cinematic entrance animation.
+
+Animation concept:
+
+The visual starts:
+
+MINIMIZED
+
+and smoothly grows into:
+
+FULL-SCREEN / MAXIMIZED
+
+The animation should feel:
+
+* Physical
+* Cinematic
+* Smooth
+* Expensive
+* Controlled
+* Intentional
+
+It should NOT feel like:
+
+* Zooming randomly
+* A template animation
+* A PowerPoint transition
+* A basic CSS scale animation
+
+The image should maintain:
+
+* Sharp edges
+* Correct proportions
+* High resolution
+* Original composition
+* Visual clarity
+
+Do not distort the supplied image.
+
+⸻
+
+5. HEADER / NAVIGATION
+
+Create a premium minimal header.
+
+The header should never feel like a standard corporate website.
+
+Avoid:
+
+* Huge navigation bars
+* Excessive menu items
+* Generic hamburger menus
+* Cheap buttons
+* Heavy borders
+
+The navigation should feel closer to:
+
+Luxury fashion house + boutique hotel + editorial magazine.
+
+The logo should receive appropriate visual importance.
+
+Navigation should be extremely clean.
+
+Potential structure:
+
+LOGO
+
+Explore
+Stays
+Stories
+Destinations
+About
+
+with a refined CTA such as:
+
+Discover / Explore / Book
+
+Use the actual brand/content context to determine the final wording.
+
+⸻
+
+6. CONTENT STRATEGY
+
+Use the information I have provided as the source material.
+
+However:
+
+DO NOT simply copy and paste the existing content.
+
+Rewrite it.
+
+The copy should feel:
+
+* Elegant
+* Short
+* Emotional
+* Sophisticated
+* Human
+* Editorial
+* Premium
+
+Avoid generic AI phrases such as:
+
+“Discover the world like never before.”
+
+“Your journey starts here.”
+
+“Experience luxury at its finest.”
+
+“Where dreams meet reality.”
+
+The writing should feel like it came from a world-class luxury travel editorial team.
+
+Use strong headlines.
+
+Use short supporting descriptions.
+
+Let the imagery carry most of the storytelling.
+
+⸻
+
+7. VISUAL SEQUENCE — VERY IMPORTANT
+
+Follow the supplied asset sequence.
+
+SECTION 01
+
+Use the FIRST supplied image/reference.
+
+This is the opening visual / hero experience.
+
+↓
+
+SECTION 02
+
+Use the SECOND supplied image.
+
+Create a transition from the hero into this visual.
+
+↓
+
+SECTION 03
+
+Use the THIRD supplied image.
+
+This should become another major visual storytelling moment.
+
+Do NOT randomly rearrange the supplied images.
+
+The sequence is intentional.
+
+⸻
+
+8. HOSPITALITY / BOOKING EXPERIENCE
+
+The platform should communicate that users can discover and potentially book:
+
+* Hotels
+* Villas
+* Luxury stays
+* Unique properties
+* Experiences
+* Destinations
+
+Think of a premium third-party hospitality marketplace, similar in functionality to Airbnb/Booking platforms, but visually much more luxurious and editorial.
+
+The booking experience should NOT look like a generic travel booking website.
+
+Instead:
+
+DISCOVER → EXPLORE → FALL IN LOVE → BOOK
+
+The interface should feel integrated into the storytelling.
+
+For example:
+
+Where do you want to disappear?
+
+Destination
+Dates
+Guests
+
+[ Explore Stays ]
+
+But rewrite the actual copy to fit the brand.
+
+⸻
+
+9. SCROLL EXPERIENCE
+
+Scrolling is a major part of the design.
+
+Do NOT simply stack static sections vertically.
+
+The website should feel like the user is moving through a story.
+
+Use sophisticated interactions such as:
+
+* Image scaling
+* Mask reveals
+* Typography movement
+* Cinematic image transitions
+* Layered scrolling
+* Subtle parallax
+* Sticky storytelling sections
+* Horizontal visual moments where appropriate
+* Text reveals
+* Background colour transformations
+* Image cropping transitions
+* Controlled zoom
+* Smooth section handoffs
+
+But:
+
+NEVER OVER-ANIMATE.
+
+Every animation must have a purpose.
+
+If an animation does not improve storytelling, remove it.
+
+⸻
+
+10. PREMIUM IMAGE TREATMENT
+
+Images are one of the most important elements.
+
+Treat every image as a luxury editorial photograph.
+
+Requirements:
+
+* Preserve sharpness
+* Preserve composition
+* Preserve original subject
+* Preserve aspect ratio
+* Avoid artificial AI-looking enhancements
+* Avoid excessive blur
+* Avoid cheap overlays
+* Avoid random filters
+
+Images should feel like they belong in:
+
+Vogue / Condé Nast Traveler / Aman / Six Senses / luxury fashion campaigns.
+
+⸻
+
+11. TYPOGRAPHY
+
+Use the typography from the supplied brand kit.
+
+Typography hierarchy should feel intentional.
+
+Create a clear distinction between:
+
+DISPLAY TYPOGRAPHY
+
+Large, elegant, cinematic headlines.
+
+SUPPORTING TYPOGRAPHY
+
+Small editorial descriptions.
+
+UI TYPOGRAPHY
+
+Navigation, buttons, booking controls and functional information.
+
+Do not use too many fonts.
+
+Typography should create luxury through:
+
+* Scale
+* Spacing
+* Line height
+* Contrast
+* Position
+* Negative space
+
+not through unnecessary decoration.
+
+⸻
+
+12. ROYAL / HERITAGE FEEL
+
+The website should have a subtle sense of:
+
+ROYALTY + HERITAGE + MODERNITY.
+
+Do NOT make it look old-fashioned.
+
+Do NOT overuse:
+
+* Gold
+* Ornamental borders
+* Crowns
+* Decorative patterns
+* Traditional motifs
+
+The royal feeling should come primarily from:
+
+* Composition
+* Colour
+* Typography
+* Photography
+* Negative space
+* Motion
+* Scale
+* Refinement
+
+The result should feel like:
+
+old-world luxury interpreted through a modern digital lens.
+
+⸻
+
+13. MICRO-INTERACTIONS
+
+Every important interactive element should feel premium.
+
+Examples:
+
+Buttons:
+
+Default
+→ subtle movement
+→ refined hover transition
+
+Images:
+
+Default
+→ subtle scale
+→ reveal information
+
+Navigation:
+
+Default
+→ elegant colour transition
+
+Cards:
+
+Default
+→ slight elevation / image movement
+→ refined interaction
+
+Keep all interactions subtle.
+
+Nothing should bounce unnecessarily.
+
+Nothing should look like a generic UI kit.
+
+⸻
+
+14. RESPONSIVE DESIGN
+
+This must be designed as a true responsive experience.
+
+Do NOT simply shrink the desktop website.
+
+Create separate design logic for:
+
+Desktop
+
+Large cinematic compositions.
+
+Tablet
+
+Balanced editorial layouts.
+
+Mobile
+
+Focused, intentional storytelling.
+
+On mobile:
+
+* Typography must remain readable
+* Images must retain impact
+* Navigation must remain elegant
+* Animations must remain smooth
+* No horizontal overflow
+* No broken layouts
+* No cropped important content
+* Touch targets must be appropriate
+
+The mobile experience must feel intentionally designed.
+
+⸻
+
+15. PERFORMANCE
+
+Because the website contains large visual assets and potentially videos:
+
+Optimize everything intelligently.
+
+Use:
+
+* Lazy loading
+* Responsive image sizes
+* Modern image formats where appropriate
+* Efficient video loading
+* Animation performance optimization
+* GPU-friendly transforms
+* Minimal unnecessary JavaScript
+* Proper asset loading priorities
+
+The website must feel premium without feeling slow.
+
+⸻
+
+16. TECHNICAL QUALITY
+
+If you are implementing the website in code:
+
+Use a clean, maintainable architecture.
+
+Separate:
+
+* Components
+* Sections
+* Assets
+* Styles
+* Animation logic
+* Data/content
+
+Do not create one giant unreadable file.
+
+Use reusable components.
+
+Ensure:
+
+* No console errors
+* No broken assets
+* No missing images
+* No broken links
+* No layout shift
+* No horizontal scrolling
+* Proper semantic HTML
+* Accessibility basics
+* Responsive behaviour
+
+⸻
+
+17. DO NOT DO THESE THINGS
+
+Absolutely DO NOT:
+
+❌ Create a generic template website
+❌ Use random stock images when supplied assets exist
+❌ Change the supplied logo
+❌ Change the brand identity unnecessarily
+❌ Use generic gradients
+❌ Make everything rounded
+❌ Use excessive glassmorphism
+❌ Use random 3D objects
+❌ Add unnecessary AI-generated visuals
+❌ Overuse animations
+❌ Use cheap-looking shadows
+❌ Make it look like a SaaS dashboard
+❌ Copy Airbnb’s interface
+❌ Make it look like Booking.com
+❌ Use generic travel website layouts
+❌ Destroy image quality
+❌ Distort the supplied images
+❌ Replace the brand typography without reason
+❌ Fill every area with content
+
+⸻
+
+18. CREATIVE STANDARD
+
+Before considering any section finished, ask:
+
+“Would this look believable on the website of a €10,000+ luxury hospitality brand?”
+
+If the answer is no:
+
+REDESIGN IT.
+
+Ask:
+
+“Does this feel expensive?”
+
+“Does this feel intentional?”
+
+“Does this feel cinematic?”
+
+“Does this feel different from a normal website?”
+
+“Would a premium brand approve this?”
+
+If not, improve it.
+
+⸻
+
+19. DESIGN PRINCIPLE
+
+The website should have:
+
+LESS CONTENT + BETTER CONTENT
+
+LESS UI + BETTER UI
+
+LESS ANIMATION + BETTER ANIMATION
+
+LESS DECORATION + BETTER COMPOSITION
+
+Luxury is created through restraint.
+
+⸻
+
+20. FINAL EXPERIENCE
+
+The user should feel:
+
+FIRST 3 SECONDS
+
+“Wow.”
+
+AFTER 10 SECONDS
+
+“What brand is this?”
+
+AFTER 30 SECONDS
+
+“I want to explore.”
+
+AFTER 60 SECONDS
+
+“I want to stay here / experience this.”
+
+FINAL IMPRESSION
+
+“This doesn’t feel like a website. It feels like a destination.”
+
+⸻
+
+21. EXECUTION PROCESS
+
+Follow this workflow:
+
+STEP 1
+
+Inspect ALL provided assets.
+
+STEP 2
+
+Identify the brand system.
+
+STEP 3
+
+Map the supplied images and references to the website sequence.
+
+STEP 4
+
+Rewrite the content into premium editorial copy.
+
+STEP 5
+
+Create the complete UX architecture.
+
+STEP 6
+
+Create the visual direction.
+
+STEP 7
+
+Design the desktop experience.
+
+STEP 8
+
+Design the mobile experience.
+
+STEP 9
+
+Add cinematic interactions.
+
+STEP 10
+
+Implement the colour transitions.
+
+STEP 11
+
+Optimize performance.
+
+STEP 12
+
+Perform a visual QA pass.
+
+STEP 13
+
+Perform a responsive QA pass.
+
+STEP 14
+
+Remove anything that feels generic, excessive or cheap.
+
+⸻
+
+22. MOST IMPORTANT INSTRUCTION
+
+Do not interpret my brief loosely.
+
+I am giving you the creative direction, assets, references and sequence.
+
+Your job is to take those ingredients and turn them into something that feels like a world-class luxury digital experience.
+
+Do not ask:
+
+“How can I make this look nice?”
+
+Ask:
+
+“How can I make this feel unforgettable?”
+
+The final result should be:
+
+ROYAL.
+
+CINEMATIC.
+
+MINIMAL.
+
+EDITORIAL.
+
+PREMIUM.
+
+MYSTERIOUS.
+
+EMOTIONAL.
+
+MODERN.
+
+TIMELESS.
+
+And most importantly:
+
+IT MUST FEEL EXPENSIVE.

@@ -1,0 +1,42 @@
+{
+  "output_file": "Hidden-Stories_Launching-Soon_1080x1920.mp4",
+  "bytes": 58428743,
+  "sha256": "1b33d962967eeeca2e2af8fa394bdba86cf49b3f2e54379f3ea7aa97bb706603",
+  "parts": [
+    {
+      "file": "part-01.bin",
+      "bytes": 8388608,
+      "sha256": "1ae1eb881014ef7c64ebfef4c89c859c6da33016fdec556334ba99cd3169c80e"
+    },
+    {
+      "file": "part-02.bin",
+      "bytes": 8388608,
+      "sha256": "8408ad0c0b50c78e53660ab5c75b878fad1747c010f802967823515fd06283a2"
+    },
+    {
+      "file": "part-03.bin",
+      "bytes": 8388608,
+      "sha256": "79837a4ec8b35abdff7aad2a35fd8788731c597ac0534bb5b5a1b0118dd049bb"
+    },
+    {
+      "file": "part-04.bin",
+      "bytes": 8388608,
+      "sha256": "1990d59d125fb3927d5cc278b9105b4ce485ffe1a686ddf741f1300713be0024"
+    },
+    {
+      "file": "part-05.bin",
+      "bytes": 8388608,
+      "sha256": "2ab75fed9e465a1399b19a1501c62587ce9c87a3f217e29ff55a1cd259c3f2cb"
+    },
+    {
+      "file": "part-06.bin",
+      "bytes": 8388608,
+      "sha256": "a51d0ddba558bfd18bc8003d80a2787ec026645659cc56bc13e3e848a133c377"
+    },
+    {
+      "file": "part-07.bin",
+      "bytes": 8097095,
+      "sha256": "d80afb04a1efd1fb8dbe50ef564e3347a55bf3253e32c4ee2da514c09e305123"
+    }
+  ]
+}

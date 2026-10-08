@@ -1,0 +1,330 @@
+export const stays = [
+  {
+    "id": "amara-villa",
+    "name": "The Amara Villa",
+    "category": "Luxury Villa",
+    "location": "Jubilee Hills, Hyderabad",
+    "price": 28500,
+    "rating": 4.9,
+    "reviews": 86,
+    "guests": 8,
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "amenities": [
+      "Pool",
+      "WiFi",
+      "Kitchen",
+      "Parking",
+      "Workspace",
+      "Pet Friendly"
+    ],
+    "instantBook": true,
+    "description": "Set behind private gates in Jubilee Hills, The Amara Villa pairs sunlit interiors with a walled garden and infinity-edge pool. Four ensuite bedrooms and a live-in chef's kitchen make it Hidden Stories' most requested address for family gatherings and quiet celebrations.",
+    "gallery": [
+      "1600596542815-ffad4c1539a9",
+      "1613977257363-707ba9348227",
+      "1600607687920-4e2a09cf159d",
+      "1600566753086-00f18fb6b3ea"
+    ],
+    "nearby": [
+      {
+        "name": "KBR Park",
+        "distance": "1.2 km"
+      },
+      {
+        "name": "Banjara Hills Road No. 1",
+        "distance": "2.5 km"
+      },
+      {
+        "name": "Hussain Sagar Lake",
+        "distance": "6 km"
+      }
+    ],
+    "editorial": "Sunlit rooms. A private pool. Space for everyone to come together."
+  },
+  {
+    "id": "nest-residences",
+    "name": "Nest Residences",
+    "category": "Service Apartment",
+    "location": "Gachibowli, Hyderabad",
+    "price": 9800,
+    "rating": 4.7,
+    "reviews": 142,
+    "guests": 3,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "amenities": [
+      "WiFi",
+      "Kitchen",
+      "Workspace",
+      "Parking"
+    ],
+    "instantBook": true,
+    "description": "A quietly elegant service apartment in the heart of Gachibowli, designed for the traveller who wants a home rather than a hotel room. Daily housekeeping and a dedicated workspace nook keep every stay effortless.",
+    "gallery": [
+      "1600210492486-724fe5c67fb0",
+      "1616486338812-3dadae4b4ace",
+      "1616594039964-ae9021a400a0",
+      "1615874959474-d609969a20ed"
+    ],
+    "nearby": [
+      {
+        "name": "HITEC City",
+        "distance": "3 km"
+      },
+      {
+        "name": "ISB Hyderabad",
+        "distance": "2 km"
+      },
+      {
+        "name": "Shilparamam",
+        "distance": "4 km"
+      }
+    ],
+    "editorial": "A considered city base, with room for work and the everyday rituals of home."
+  },
+  {
+    "id": "sunroot-farmstead",
+    "name": "Sunroot Farmstead",
+    "category": "Farm House",
+    "location": "Shamshabad, Hyderabad",
+    "price": 16500,
+    "rating": 4.8,
+    "reviews": 64,
+    "guests": 12,
+    "bedrooms": 5,
+    "bathrooms": 4,
+    "amenities": [
+      "Pool",
+      "Kitchen",
+      "Parking",
+      "Pet Friendly"
+    ],
+    "instantBook": false,
+    "description": "Twelve acres of mango orchard surround this working farmhouse outside Shamshabad, where mornings begin with fresh filter coffee on the verandah. A spring-fed pool and open-air dining pavilion make it ideal for long weekends with extended family.",
+    "gallery": [
+      "1600047509807-ba8f99d2cdde",
+      "1505843513577-22bb7d21e455",
+      "1523217582562-09d0def993a6",
+      "1512917774080-9991f1c4c750"
+    ],
+    "nearby": [
+      {
+        "name": "Rajiv Gandhi Intl. Airport",
+        "distance": "8 km"
+      },
+      {
+        "name": "Ramoji Film City",
+        "distance": "18 km"
+      },
+      {
+        "name": "Ocean Park",
+        "distance": "10 km"
+      }
+    ],
+    "editorial": "Orchard mornings and long afternoons, just beyond the city."
+  },
+  {
+    "id": "courtyard-house",
+    "name": "The Courtyard House",
+    "category": "Premium Guest House",
+    "location": "Banjara Hills, Hyderabad",
+    "price": 12000,
+    "rating": 4.6,
+    "reviews": 51,
+    "guests": 6,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "amenities": [
+      "WiFi",
+      "Kitchen",
+      "Parking"
+    ],
+    "instantBook": true,
+    "description": "Built around a shaded stone courtyard in old Banjara Hills, this guest house channels Deccan heritage with modern comfort. Three private suites open onto a communal veranda perfect for slow evenings.",
+    "gallery": [
+      "1600585154340-be6161a56a0c",
+      "1600121848594-d8644e57abab",
+      "1600607687920-4e2a09cf159d",
+      "1600566752355-35792bedcfea"
+    ],
+    "nearby": [
+      {
+        "name": "KBR Park",
+        "distance": "0.8 km"
+      },
+      {
+        "name": "Jubilee Hills Check Post",
+        "distance": "2 km"
+      },
+      {
+        "name": "Hussain Sagar Lake",
+        "distance": "5 km"
+      }
+    ],
+    "editorial": "Shaded verandas and slow evenings in the heart of Banjara Hills."
+  },
+  {
+    "id": "qutb-manor",
+    "name": "Qutb Manor",
+    "category": "Heritage Home",
+    "location": "Begumpet, Hyderabad",
+    "price": 21000,
+    "rating": 5,
+    "reviews": 37,
+    "guests": 10,
+    "bedrooms": 5,
+    "bathrooms": 5,
+    "amenities": [
+      "WiFi",
+      "Kitchen",
+      "Parking",
+      "Workspace"
+    ],
+    "instantBook": false,
+    "description": "A restored 1920s Nizam-era residence in Begumpet, Qutb Manor keeps its original teak fittings, arched verandas and hand-painted tile floors. Five heritage suites surround a central fountain courtyard, steps from the old city's landmarks.",
+    "gallery": [
+      "1600121848594-d8644e57abab",
+      "1600585154340-be6161a56a0c",
+      "1505843513577-22bb7d21e455",
+      "1512917774080-9991f1c4c750"
+    ],
+    "nearby": [
+      {
+        "name": "Hussain Sagar Lake",
+        "distance": "3 km"
+      },
+      {
+        "name": "Charminar",
+        "distance": "7 km"
+      },
+      {
+        "name": "Chowmahalla Palace",
+        "distance": "7.5 km"
+      }
+    ],
+    "editorial": "Teak, tile and a quieter rhythm. A residence with a sense of history."
+  },
+  {
+    "id": "ivory-loft",
+    "name": "Ivory Loft",
+    "category": "Boutique Residence",
+    "location": "Film Nagar, Hyderabad",
+    "price": 14200,
+    "rating": 4.8,
+    "reviews": 73,
+    "guests": 4,
+    "bedrooms": 2,
+    "bathrooms": 2,
+    "amenities": [
+      "WiFi",
+      "Kitchen",
+      "Workspace"
+    ],
+    "instantBook": true,
+    "description": "A sculptural, light-filled loft in Film Nagar with double-height ceilings and a private sundeck. Ivory Loft suits guests who want boutique design at the centre of the city's film and dining district.",
+    "gallery": [
+      "1616594039964-ae9021a400a0",
+      "1600210492486-724fe5c67fb0",
+      "1600566752355-35792bedcfea",
+      "1616486338812-3dadae4b4ace"
+    ],
+    "nearby": [
+      {
+        "name": "Jubilee Hills",
+        "distance": "3 km"
+      },
+      {
+        "name": "Film Nagar Cultural Centre",
+        "distance": "0.5 km"
+      },
+      {
+        "name": "Road No. 45 Dining Strip",
+        "distance": "1 km"
+      }
+    ],
+    "editorial": "Sculptural interiors and a private sundeck above Film Nagar."
+  },
+  {
+    "id": "palm-and-pine",
+    "name": "Palm & Pine",
+    "category": "Holiday Home",
+    "location": "Kokapet, Hyderabad",
+    "price": 18800,
+    "rating": 4.9,
+    "reviews": 58,
+    "guests": 9,
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "amenities": [
+      "Pool",
+      "WiFi",
+      "Kitchen",
+      "Pet Friendly"
+    ],
+    "instantBook": true,
+    "description": "Tucked behind a private pool lawn in Kokapet, Palm & Pine is Hidden Stories' warm-weather favourite \u2014 four bedrooms, an outdoor kitchen and dogs are always welcome on the grounds.",
+    "gallery": [
+      "1613977257363-707ba9348227",
+      "1600596542815-ffad4c1539a9",
+      "1523217582562-09d0def993a6",
+      "1615874959474-d609969a20ed"
+    ],
+    "nearby": [
+      {
+        "name": "Financial District",
+        "distance": "2 km"
+      },
+      {
+        "name": "Gachibowli",
+        "distance": "6 km"
+      },
+      {
+        "name": "Neopolis",
+        "distance": "1.5 km"
+      }
+    ],
+    "editorial": "A private pool, an outdoor kitchen, and room for your four-legged companion."
+  },
+  {
+    "id": "meridian-suites",
+    "name": "The Meridian Suites",
+    "category": "Corporate Apartment",
+    "location": "HITEC City, Hyderabad",
+    "price": 11500,
+    "rating": 4.7,
+    "reviews": 97,
+    "guests": 2,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "amenities": [
+      "WiFi",
+      "Workspace",
+      "Parking",
+      "Kitchen"
+    ],
+    "instantBook": true,
+    "description": "Sleek, serviced and steps from HITEC City's towers, The Meridian Suites is built for the extended business stay \u2014 a dedicated desk, blackout drapes and hotel-grade linens without the hotel.",
+    "gallery": [
+      "1615874959474-d609969a20ed",
+      "1600210492486-724fe5c67fb0",
+      "1616594039964-ae9021a400a0",
+      "1616486338812-3dadae4b4ace"
+    ],
+    "nearby": [
+      {
+        "name": "Cyber Towers",
+        "distance": "1 km"
+      },
+      {
+        "name": "Inorbit Mall",
+        "distance": "2 km"
+      },
+      {
+        "name": "Gachibowli Stadium",
+        "distance": "4 km"
+      }
+    ],
+    "editorial": "A restful address for the working week, close to HITEC City."
+  }
+];

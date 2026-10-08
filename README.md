@@ -23,7 +23,7 @@ The supplied launch video carries the burgundy figurative Hidden Stories logo, w
 
 Property names, locations, capacities, amenities, nightly rates and photographic source IDs are taken from https://www.hiddenstories.in/ and its publicly served catalogue. Descriptions are rewritten without adding property claims. Reviews, host profiles, testimonial claims and simulated payments from that source have not been carried over.
 
-The catalogue references Unsplash photos; this implementation retains those exact source photographs and creates responsive local WebP encodings. The reference revision also includes original public photography from Atlanta Trevone and Toscana Valley, and the original canoe artwork from Grand Adirondack. No AI redrawing or photo upscaling was used. Original source URLs and native dimensions are recorded in source/reference-image-audit.json and source/image-resolution-audit.json. The published page does not load third-party JavaScript bundles. Supplied screenshots and original film are included only in the downloadable ZIP references folder.
+The catalogue references Unsplash photos; this implementation retains those exact source photographs and creates responsive local WebP encodings. The reference revision also includes original public photography from Atlanta Trevone and Toscana Valley, and the original canoe artwork from Grand Adirondack. No AI redrawing or photo upscaling was used. Original source URLs and native dimensions are recorded in source/reference-image-audit.json and source/image-resolution-audit.json. The published page does not load third-party JavaScript bundles. Supplied screenshots and the original film are kept in `references/` and are not used by the published page.
 
 ## Image-resolution limits
 
@@ -40,3 +40,13 @@ Scrolling stays native. A damped requestAnimationFrame loop updates only when sc
 ## Validation limit
 
 Static assets, source links, JS syntax, filtering and date behaviour can be checked in the execution environment. The required managed browser-control skill was not available, so an actual browser visual/responsive QA pass could not be performed here.
+
+## Original reference film
+
+All deployed images, fonts and the playable website film are ordinary files in `assets/`. The original 58 MB source film is preserved byte-for-byte in `references/original-film/` because the GitHub upload API rejected the single large file. It is not needed to deploy the website. To restore the original MP4 after cloning, run:
+
+```sh
+python3 references/original-film/restore.py
+```
+
+The script checks every part and the restored video against SHA-256 checksums.

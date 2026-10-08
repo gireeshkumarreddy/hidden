@@ -1,0 +1,40 @@
+HIDDEN STORIES — COMPLETE DEPLOYMENT FOLDER
+
+This repository includes the entire website and its local assets.
+
+DEPLOY
+1. Clone the repository, or download and extract its ZIP.
+2. Upload that folder's complete contents to your static hosting directory.
+3. index.html must be at the hosting root, alongside assets/, app.js and styles.css.
+
+No build command or dependency installation is required. Keep all filenames
+and folders unchanged; the website uses relative paths to its local assets.
+
+LOCAL PREVIEW
+Open a terminal in the extracted folder and run:
+    python3 -m http.server 8080
+Then open http://localhost:8080
+JavaScript modules require an HTTP server; opening index.html directly with
+a file:// address will not load every interaction.
+
+INCLUDED
+- index.html: the homepage
+- styles.css, reference-layout.css, fonts.css: layouts, responsive styles, fonts
+- app.js, motion.js, logic.js, catalogue.js: all interactions and catalogue code
+- assets/: all 104 website image files, 4 font files and the launch video
+- source/: catalogue data, image origins and resolution audits
+- references/: original supplied screenshots, original launch film parts and brief
+- FILE-MANIFEST.json: every packaged file and its checksum
+
+The latest version includes the original Hidden Stories H1 and the complete
+Plan your stay panel beside the property collection.
+
+The live availability/payment service is not part of this static website.
+The working planner filters stays and calculates estimates; booking continues
+on the original Hidden Stories website. Image-resolution limits are documented
+in README.md and the source audits.
+
+OPTIONAL ORIGINAL SOURCE VIDEO
+The site video is already in assets/launch-film.mp4. To restore the untouched
+original reference film, run: python3 references/original-film/restore.py
+The restore step is not needed to deploy or play the website video.

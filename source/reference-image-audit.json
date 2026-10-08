@@ -1,0 +1,358 @@
+[
+  {
+    "name": "reference-stay-01",
+    "source_url": "https://atlantatrevonebay.com/assets/bulkUpload/AtlantaTrevone_AlexanderJCollins_21-v2.jpg",
+    "source_width": 2048,
+    "source_height": 1534,
+    "upscaled": false,
+    "files": [
+      {
+        "file": "reference-stay-01-800.webp",
+        "width": 800,
+        "height": 599
+      },
+      {
+        "file": "reference-stay-01-1600.webp",
+        "width": 1600,
+        "height": 1198
+      },
+      {
+        "file": "reference-stay-01-2048.webp",
+        "width": 2048,
+        "height": 1534
+      }
+    ]
+  },
+  {
+    "name": "reference-stay-02",
+    "source_url": "https://atlantatrevonebay.com/assets/bulkUpload/Large-PENTHOUSE_HENLEY_KITCHEN_03_056_v1.jpg",
+    "source_width": 2286,
+    "source_height": 3200,
+    "upscaled": false,
+    "files": [
+      {
+        "file": "reference-stay-02-800.webp",
+        "width": 800,
+        "height": 1120
+      },
+      {
+        "file": "reference-stay-02-1600.webp",
+        "width": 1600,
+        "height": 2240
+      },
+      {
+        "file": "reference-stay-02-2286.webp",
+        "width": 2286,
+        "height": 3200
+      }
+    ]
+  },
+  {
+    "name": "reference-stay-03",
+    "source_url": "https://atlantatrevonebay.com/assets/bulkUpload/AtlantaTrevone_AlexanderJCollins_42.jpg",
+    "source_width": 1024,
+    "source_height": 1280,
+    "upscaled": false,
+    "files": [
+      {
+        "file": "reference-stay-03-800.webp",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "file": "reference-stay-03-1024.webp",
+        "width": 1024,
+        "height": 1280
+      }
+    ]
+  },
+  {
+    "name": "reference-stay-04",
+    "source_url": "https://atlantatrevonebay.com/assets/bulkUpload/NET_LOFT-64.jpg",
+    "source_width": 2048,
+    "source_height": 2560,
+    "upscaled": false,
+    "files": [
+      {
+        "file": "reference-stay-04-800.webp",
+        "width": 800,
+        "height": 1000
+      },
+      {
+        "file": "reference-stay-04-1600.webp",
+        "width": 1600,
+        "height": 2000
+      },
+      {
+        "file": "reference-stay-04-2048.webp",
+        "width": 2048,
+        "height": 2560
+      }
+    ]
+  },
+  {
+    "name": "reference-stay-05",
+    "source_url": "https://atlantatrevonebay.com/assets/bulkUpload/AtlantaTrevone_AlexanderJCollins_70.jpg",
+    "source_width": 2048,
+    "source_height": 2734,
+    "upscaled": false,
+    "files": [
+      {
+        "file": "reference-stay-05-800.webp",
+        "width": 800,
+        "height": 1068
+      },
+      {
+        "file": "reference-stay-05-1600.webp",
+        "width": 1600,
+        "height": 2136
+      },
+      {
+        "file": "reference-stay-05-2048.webp",
+        "width": 2048,
+        "height": 2734
+      }
+    ]
+  },
+  {
+    "name": "reference-stay-06",
+    "source_url": "https://atlantatrevonebay.com/assets/bulkUpload/IMGP2500-Edit.jpg",
+    "source_width": 2250,
+    "source_height": 3000,
+    "upscaled": false,
+    "files": [
+      {
+        "file": "reference-stay-06-800.webp",
+        "width": 800,
+        "height": 1067
+      },
+      {
+        "file": "reference-stay-06-1600.webp",
+        "width": 1600,
+        "height": 2133
+      },
+      {
+        "file": "reference-stay-06-2250.webp",
+        "width": 2250,
+        "height": 3000
+      }
+    ]
+  },
+  {
+    "name": "reference-stay-07",
+    "source_url": "https://atlantatrevonebay.com/assets/bulkUpload/AtlantaTrevone_AlexanderJCollins_56-v3.jpg",
+    "source_width": 2048,
+    "source_height": 1536,
+    "upscaled": false,
+    "files": [
+      {
+        "file": "reference-stay-07-800.webp",
+        "width": 800,
+        "height": 600
+      },
+      {
+        "file": "reference-stay-07-1600.webp",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "file": "reference-stay-07-2048.webp",
+        "width": 2048,
+        "height": 1536
+      }
+    ]
+  },
+  {
+    "name": "villa-banner",
+    "source_url": "https://toscanavalley.com/wp-content/uploads/2024/04/banner-1-2.jpg",
+    "source_width": 1780,
+    "source_height": 910,
+    "upscaled": false,
+    "files": [
+      {
+        "file": "villa-banner-800.webp",
+        "width": 800,
+        "height": 409
+      },
+      {
+        "file": "villa-banner-1600.webp",
+        "width": 1600,
+        "height": 818
+      },
+      {
+        "file": "villa-banner-1780.webp",
+        "width": 1780,
+        "height": 910
+      }
+    ]
+  },
+  {
+    "name": "villa-lake",
+    "source_url": "https://toscanavalley.com/wp-content/uploads/2024/04/land-villas.jpeg",
+    "source_width": 1920,
+    "source_height": 982,
+    "upscaled": false,
+    "files": [
+      {
+        "file": "villa-lake-800.webp",
+        "width": 800,
+        "height": 409
+      },
+      {
+        "file": "villa-lake-1600.webp",
+        "width": 1600,
+        "height": 818
+      },
+      {
+        "file": "villa-lake-1920.webp",
+        "width": 1920,
+        "height": 982
+      }
+    ]
+  },
+  {
+    "name": "villa-condo",
+    "source_url": "https://toscanavalley.com/wp-content/uploads/2024/04/condo.jpeg",
+    "source_width": 1920,
+    "source_height": 982,
+    "upscaled": false,
+    "files": [
+      {
+        "file": "villa-condo-800.webp",
+        "width": 800,
+        "height": 409
+      },
+      {
+        "file": "villa-condo-1600.webp",
+        "width": 1600,
+        "height": 818
+      },
+      {
+        "file": "villa-condo-1920.webp",
+        "width": 1920,
+        "height": 982
+      }
+    ]
+  },
+  {
+    "name": "villa-land",
+    "source_url": "https://toscanavalley.com/wp-content/uploads/2024/04/land_villas.png",
+    "source_width": 820,
+    "source_height": 532,
+    "upscaled": false,
+    "files": [
+      {
+        "file": "villa-land-800.webp",
+        "width": 800,
+        "height": 519
+      },
+      {
+        "file": "villa-land-820.webp",
+        "width": 820,
+        "height": 532
+      }
+    ]
+  },
+  {
+    "name": "golf",
+    "source_url": "https://toscanavalley.com/wp-content/uploads/2024/03/golf_country_club.jpeg",
+    "source_width": 820,
+    "source_height": 462,
+    "upscaled": false,
+    "files": [
+      {
+        "file": "golf-800.webp",
+        "width": 800,
+        "height": 451
+      },
+      {
+        "file": "golf-820.webp",
+        "width": 820,
+        "height": 462
+      }
+    ]
+  },
+  {
+    "name": "dining",
+    "source_url": "https://toscanavalley.com/wp-content/uploads/2024/03/caffe_del_museo.jpg",
+    "source_width": 430,
+    "source_height": 538,
+    "upscaled": false,
+    "files": [
+      {
+        "file": "dining-430.webp",
+        "width": 430,
+        "height": 538
+      }
+    ]
+  },
+  {
+    "name": "dusk",
+    "source_url": "https://toscanavalley.com/wp-content/uploads/2024/03/hotel_portofino_banner.jpg",
+    "source_width": 1921,
+    "source_height": 982,
+    "upscaled": false,
+    "files": [
+      {
+        "file": "dusk-800.webp",
+        "width": 800,
+        "height": 409
+      },
+      {
+        "file": "dusk-1600.webp",
+        "width": 1600,
+        "height": 818
+      },
+      {
+        "file": "dusk-1921.webp",
+        "width": 1921,
+        "height": 982
+      }
+    ]
+  },
+  {
+    "name": "villa",
+    "source_url": "https://toscanavalley.com/wp-content/uploads/2024/04/villa.png",
+    "source_width": 820,
+    "source_height": 532,
+    "upscaled": false,
+    "files": [
+      {
+        "file": "villa-800.webp",
+        "width": 800,
+        "height": 519
+      },
+      {
+        "file": "villa-820.webp",
+        "width": 820,
+        "height": 532
+      }
+    ]
+  },
+  {
+    "name": "zone6a",
+    "source_url": "https://toscanavalley.com/wp-content/uploads/2024/04/zone6a.png",
+    "source_width": 820,
+    "source_height": 523,
+    "upscaled": false,
+    "files": [
+      {
+        "file": "zone6a-800.webp",
+        "width": 800,
+        "height": 510
+      },
+      {
+        "file": "zone6a-820.webp",
+        "width": 820,
+        "height": 523
+      }
+    ]
+  },
+  {
+    "name": "canoe-exact",
+    "source_url": "https://www.grandadirondack.com/wp-content/themes/fusion-grandadirondack/images/graphic-canoe-illustration-desktop.png",
+    "source_width": 830,
+    "source_height": 344,
+    "upscaled": false
+  }
+]
