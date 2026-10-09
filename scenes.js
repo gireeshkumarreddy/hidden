@@ -4,6 +4,7 @@ import { categoryOf, formatPrice } from './logic.js';
 const $ = (selector, root = document) => root.querySelector(selector);
 const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
 const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+const phone = matchMedia('(max-width: 800px)');
 const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
 const clamp = (value, min = 0, max = 1) => Math.min(max, Math.max(min, value));
 const lerp = (a, b, t) => a + (b - a) * t;
@@ -89,6 +90,7 @@ function updateHeader(y) {
   // Read positions live: fonts, images and the collection all change heights after load.
   const zone = headerZones.find(element => { const box = element.getBoundingClientRect(); return box.top <= 56 && box.bottom > 56; });
   if (zone) header.dataset.theme = zone.dataset.headerNow || zone.dataset.header;
+  header.classList.toggle('is-scrolled', y > 24);
   const max = Math.max(1, document.documentElement.scrollHeight - vh);
   if (rail) rail.style.transform = `scaleY(${(y / max).toFixed(4)})`;
   if (ring) ring.style.transform = `rotate(${(y * .06).toFixed(2)}deg)`;
@@ -182,7 +184,7 @@ function acrossScene() {
     finder.requestSubmit();
   });
   addScene(section, p => {
-    track.style.transform = `translate3d(${(-travel * p).toFixed(1)}px, 0, 0)`;
+    track.style.transform = travel ? `translate3d(${(-travel * p).toFixed(1)}px, 0, 0)` : '';
     for (const item of positions) {
       const centre = item.left + item.width / 2 - travel * p;
       const offset = (centre - vw / 2) / vw;
@@ -195,6 +197,14 @@ function acrossScene() {
   }, {
     setup() {
       track.style.transform = 'none';
+      if (phone.matches) {
+        // Stacked: no pinning or sideways travel; the map draws as it scrolls into view.
+        travel = 0; positions = []; section.style.height = '';
+        floating.forEach(element => { element.style.translate = ''; });
+        const mapPanel = $('.panel-map', section);
+        mapStart = clamp((mapPanel.offsetTop - vh * .6) / Math.max(1, section.offsetHeight - vh), 0, .95);
+        return;
+      }
       travel = Math.max(0, track.scrollWidth - vw);
       section.style.height = `${travel + vh}px`;
       const trackLeft = track.getBoundingClientRect().left;
@@ -378,6 +388,7 @@ export function setupScenes() {
   addEventListener('scroll', requestRender, { passive: true });
   addEventListener('resize', measure, { passive: true });
   addEventListener('story:layout', () => requestAnimationFrame(measure));
+  phone.addEventListener('change', measure);
   addEventListener('load', measure, { once: true });
   new ResizeObserver(() => measure()).observe($('main'));
   // Late images and fonts can nudge the layout; re-measure once things settle.

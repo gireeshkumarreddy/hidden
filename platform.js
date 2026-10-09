@@ -116,6 +116,34 @@ function updateBadges() {
   }
 }
 
+/* ------------------------------------------------------------------ Trip planner (home and explore) */
+const pinIcon = '<svg class="pf-pin-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6-7-11a7 7 0 1 1 14 0c0 5-7 11-7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>';
+const dayLabel = value => new Date(`${value}T12:00:00`).toLocaleDateString('en-IN', { weekday: 'short', day: 'numeric', month: 'short' });
+function tripSummary({ checkIn, checkOut, guests }) {
+  const error = validateDates(checkIn, checkOut);
+  if (error) return error;
+  return `${plural(nightsBetween(checkIn, checkOut), 'night')}: ${dayLabel(checkIn)} to ${dayLabel(checkOut)}, ${plural(guests, 'guest')}`;
+}
+function planForm(kind) {
+  const { checkIn, checkOut, guests } = state.search;
+  return `<form class="pf-plan pf-plan-${kind}" data-search-form novalidate>
+    <p class="pf-plan-where">${pinIcon}<span>All our homes are in <strong>Hyderabad, India</strong></span></p>
+    <div class="pf-plan-fields">
+      <label class="pf-plan-field"><span class="pf-plan-label">Check-in</span><span class="pf-plan-hint">The day you arrive</span><input type="date" name="checkIn" value="${checkIn}" min="${today}" required></label>
+      <label class="pf-plan-field"><span class="pf-plan-label">Check-out</span><span class="pf-plan-hint">The day you leave</span><input type="date" name="checkOut" value="${checkOut}" min="${dateAfter(checkIn)}" required></label>
+      <div class="pf-plan-field"><span class="pf-plan-label">Guests</span><span class="pf-plan-hint">Adults and children</span>${stepper('guests', guests, 1, 20)}</div>
+    </div>
+    <p class="pf-plan-summary" data-plan-summary aria-live="polite">${tripSummary(state.search)}</p>
+    <button class="pf-button ${kind === 'home' ? 'pf-button-gold' : ''} pf-plan-go" type="submit">${kind === 'home' ? 'Show available homes <span aria-hidden="true">→</span>' : 'Update results'}</button>
+  </form>`;
+}
+const planToggleText = () => `${pinIcon}<span><strong>Hyderabad</strong> · ${shortDate(state.search.checkIn)} – ${shortDate(state.search.checkOut)} · ${plural(state.search.guests, 'guest')}</span>`;
+function refreshPlanSummary(form) {
+  if (!form) return;
+  const checkIn = $('[name=checkIn]', form).value, checkOut = $('[name=checkOut]', form).value;
+  $('[data-plan-summary]', form).textContent = tripSummary({ checkIn, checkOut, guests: state.search.guests });
+}
+
 /* ------------------------------------------------------------------ Home blocks (below the story) */
 function renderHome() {
   const root = $('#home-platform');
@@ -123,15 +151,10 @@ function renderHome() {
   const { checkIn, checkOut, guests } = state.search;
   root.innerHTML = `
     <section class="hp-search" id="home-search" aria-labelledby="home-search-title">
-      <p class="hs-kicker">Curated · verified · unforgettable</p>
-      <h2 class="display display-xl" id="home-search-title">Select your stay</h2>
-      <form class="pf-searchbar hp-searchbar" data-search-form>
-        <div class="pf-field"><span>Destination</span><strong>Hyderabad, India</strong></div>
-        <label class="pf-field"><span>Check in</span><input type="date" name="checkIn" value="${checkIn}" min="${today}" required></label>
-        <label class="pf-field"><span>Check out</span><input type="date" name="checkOut" value="${checkOut}" min="${dateAfter(checkIn)}" required></label>
-        <div class="pf-field"><span>Guests</span>${stepper('guests', guests, 1, 20)}</div>
-        <button class="pf-button pf-button-gold" type="submit">Search</button>
-      </form>
+      <p class="hs-kicker">Plan your stay</p>
+      <h2 class="display display-xl" id="home-search-title">Find your stay</h2>
+      <p class="hp-search-lead">Choose your dates and how many people are coming. We'll show you every home that's free.</p>
+      ${planForm('home')}
     </section>
     <section class="hp-block" aria-labelledby="cat-title">
       <div class="hp-head"><p class="hs-kicker">By category</p><h2 class="display" id="cat-title">Featured categories</h2><p>A handful of curated stay formats, each personally verified for comfort and character.</p></div>
@@ -237,17 +260,8 @@ async function renderSearch(query) {
   const root = view();
   root.innerHTML = `<section class="pf-screen pf-search" aria-labelledby="search-title">
     <h1 class="visually-hidden" id="search-title">Explore stays</h1>
-    <form class="pf-searchbar" data-search-form>
-      <div class="pf-field"><span>Destination</span><strong>Hyderabad, India</strong></div>
-      <label class="pf-field"><span>Check in</span><input type="date" name="checkIn" value="${checkIn}" min="${today}"></label>
-      <label class="pf-field"><span>Check out</span><input type="date" name="checkOut" value="${checkOut}" min="${dateAfter(checkIn)}"></label>
-      <div class="pf-field"><span>Guests</span>${stepper('guests', guests, 1, 20)}</div>
-      <div class="pf-tools">
-        <label class="visually-hidden" for="sort-by">Sort by</label>
-        <select id="sort-by" name="sort">${sortOptions.map(([value, label]) => `<option value="${value}" ${filters.sort === value ? 'selected' : ''}>${label}</option>`).join('')}</select>
-        <div class="pf-toggle" role="group" aria-label="View"><button type="button" data-view="grid" aria-pressed="${filters.view === 'grid'}">Grid</button><button type="button" data-view="map" aria-pressed="${filters.view === 'map'}">Map</button></div>
-      </div>
-    </form>
+    <button type="button" class="pf-plan-toggle" data-toggle-plan aria-expanded="false" aria-controls="pf-plan-wrap"><span class="pf-plan-toggle-text" data-plan-toggle-text>${planToggleText()}</span><em>Change</em></button>
+    <div class="pf-plan-wrap" id="pf-plan-wrap">${planForm('explore')}</div>
     <div class="pf-search-body">
       <aside class="pf-filters" id="pf-filters" aria-label="Filters">
         <div class="pf-filters-head"><h2>Filters</h2><button type="button" class="pf-text-button" data-clear>Clear</button><button type="button" class="pf-text-button pf-filters-close" data-close-filters>Done</button></div>
@@ -258,7 +272,10 @@ async function renderSearch(query) {
         <fieldset><legend class="pf-filter-label">Amenities</legend>${amenityFilters.map(item => `<label class="pf-check"><input type="checkbox" data-filter="amenity" value="${esc(item)}" ${filters.amenities.includes(item) ? 'checked' : ''}><span>${esc(item)}</span></label>`).join('')}</fieldset>
       </aside>
       <div class="pf-results">
-        <div class="pf-results-head"><p class="pf-count" id="pf-count" role="status"></p><button type="button" class="pf-button pf-button-ghost pf-filters-open" data-open-filters>Filters</button></div>
+        <div class="pf-results-head"><p class="pf-count" id="pf-count" role="status"></p>
+          <div class="pf-tools"><label class="visually-hidden" for="sort-by">Sort by</label><select id="sort-by" name="sort">${sortOptions.map(([value, label]) => `<option value="${value}" ${filters.sort === value ? 'selected' : ''}>${label}</option>`).join('')}</select>
+            <div class="pf-toggle" role="group" aria-label="View"><button type="button" data-view="grid" aria-pressed="${filters.view === 'grid'}">Grid</button><button type="button" data-view="map" aria-pressed="${filters.view === 'map'}">Map</button></div>
+            <button type="button" class="pf-button pf-button-ghost pf-filters-open" data-open-filters>Filters</button></div></div>
         <div class="pf-active" id="pf-active"></div>
         <div id="pf-list"></div>
       </div>
@@ -269,7 +286,8 @@ async function renderSearch(query) {
     const draw = unavailable => {
       const list = applyFilters(current, unavailable);
       const collection = collections.find(item => item.id === current.collection);
-      $('#pf-count').textContent = `${list.length} handpicked ${list.length === 1 ? 'stay' : 'stays'} in Hyderabad${unavailable ? ` · ${shortDate(state.search.checkIn)} – ${shortDate(state.search.checkOut)} · ${plural(state.search.guests, 'guest')}` : ''}`;
+      $('#pf-count').innerHTML = `<strong>${list.length} ${list.length === 1 ? 'home' : 'homes'} available</strong><span>${shortDate(state.search.checkIn)} – ${shortDate(state.search.checkOut)} · ${plural(state.search.guests, 'guest')}</span>`;
+      const toggleText = $('[data-plan-toggle-text]', root); if (toggleText) toggleText.innerHTML = planToggleText();
       $('#pf-active').innerHTML = [
         collection ? `<button type="button" class="pf-chip pf-chip-on" data-drop="collection">${collection.name} ✕</button>` : '',
         ...current.types.map(type => `<button type="button" class="pf-chip pf-chip-on" data-drop-type="${esc(type)}">${esc(type)} ✕</button>`),
@@ -314,6 +332,7 @@ async function renderSearch(query) {
     if (target.dataset.drop === 'collection') update({ collection: '' });
     if (target.dataset.dropType) update({ types: filtersFrom(location.hash.split('?')[1]).types.filter(type => type !== target.dataset.dropType) });
     if (target.dataset.dropAmenity) update({ amenities: filtersFrom(location.hash.split('?')[1]).amenities.filter(item => item !== target.dataset.dropAmenity) });
+    if (target.hasAttribute('data-toggle-plan')) { const screen = $('.pf-search', root), open = !screen.classList.contains('plan-open'); screen.classList.toggle('plan-open', open); target.setAttribute('aria-expanded', String(open)); }
     if (target.dataset.mapStay) chooseOnMap(target.dataset.mapStay);
     if (target.hasAttribute('data-open-filters')) $('#pf-filters').classList.add('open');
     if (target.hasAttribute('data-close-filters')) $('#pf-filters').classList.remove('open');
@@ -848,8 +867,9 @@ export async function setupPlatform({ storePromise, smooth }) {
     const step = event.target.closest('[data-search-form] [data-step]');
     if (step) {
       state.search.guests = Math.max(1, Math.min(20, state.search.guests + Number(step.dataset.step))); saveSearch();
-      const holder = step.closest('[data-stepper]');
+      const holder = step.closest('[data-stepper]'), form = step.closest('[data-search-form]');
       holder.outerHTML = stepper('guests', state.search.guests, 1, 20);
+      refreshPlanSummary(form);
       if (location.hash.startsWith('#/stays')) renderSearch(location.hash.split('?')[1]);
     }
   });
@@ -861,13 +881,19 @@ export async function setupPlatform({ storePromise, smooth }) {
     const error = validateDates(checkIn, checkOut);
     if (error) { toast(error); return; }
     Object.assign(state.search, { checkIn, checkOut }); saveSearch();
+    if (location.hash.startsWith('#/stays')) { renderSearch(location.hash.split('?')[1]); return; }
     go('#/stays');
   });
-  $('#home-platform')?.addEventListener('change', event => {
-    if (event.target.name !== 'checkIn') return;
-    const out = $('[name=checkOut]', event.target.form);
-    out.min = dateAfter(event.target.value);
-    if (out.value <= event.target.value) out.value = dateAfter(event.target.value);
+  // Dates in any planner: keep check-out after check-in and the summary line current.
+  document.addEventListener('change', event => {
+    const form = event.target.closest('[data-search-form]');
+    if (!form || event.target.type !== 'date') return;
+    if (event.target.name === 'checkIn') {
+      const out = $('[name=checkOut]', form);
+      out.min = dateAfter(event.target.value);
+      if (out.value <= event.target.value) out.value = dateAfter(event.target.value);
+    }
+    refreshPlanSummary(form);
   });
   // Mobile header menu.
   const menu = $('.hs-menu-toggle');

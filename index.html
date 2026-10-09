@@ -6,9 +6,18 @@
   <meta name="theme-color" content="#f7f2e8">
   <meta name="description" content="A considered collection of villas, heritage homes and residences in Hyderabad. Hidden Stories. Your stay, your story.">
   <title>Hidden Stories — Your Stay, Your Story</title>
+  <script>
+    // Runs before the first paint: if the intro will play, show it straight away and hold the page still.
+    (function () {
+      var hash = location.hash;
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches && (hash === '' || hash === '#top' || hash === '#/')) {
+        document.documentElement.classList.add('intro-boot');
+      }
+    })();
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wdth,wght@62.5,300;62.5,400;62.5,500&family=Pinyon+Script&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wdth,wght@62.5,300;62.5,400;62.5,500&family=Pinyon+Script&display=block">
   <link rel="stylesheet" href="./fonts.css">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./reference-layout.css">
@@ -16,6 +25,9 @@
   <link rel="stylesheet" href="./story.css">
   <link rel="stylesheet" href="./platform.css">
   <link rel="preload" href="./assets/home-tour-poster.webp" as="image">
+  <link rel="preload" href="./assets/playfair-display-normal-400.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./assets/playfair-display-italic-400.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./assets/inter-normal-400.ttf" as="font" type="font/ttf" crossorigin>
   <script type="module" src="./app.js"></script>
 </head>
 <body class="story-page">
@@ -32,6 +44,14 @@
     </div>
     <button class="intro-skip" type="button">Skip intro</button>
   </div>
+  <script>
+    (function () {
+      var door = document.querySelector('#intro .intro-door'), unit = innerHeight / 90, span = innerWidth / unit;
+      door.setAttribute('viewBox', (-span / 2).toFixed(3) + ' -45 ' + span.toFixed(3) + ' 90');
+      door.setAttribute('preserveAspectRatio', 'none');
+      document.getElementById('intro').style.setProperty('--arch-unit', unit + 'px');
+    })();
+  </script>
 
   <header class="hs-header" id="site-header" data-theme="light">
     <a class="hs-emblem" href="#top" aria-label="Hidden Stories home">
@@ -39,7 +59,7 @@
       <span class="brand-art brand-art-small"><img src="./assets/brand-frame.webp" alt="" width="1080" height="1920"></span>
     </a>
     <div class="hs-header-right">
-      <a class="hs-cta" href="#/stays">Find your<br>stay</a>
+      <a class="hs-cta" href="#/stays">Find your <br>stay</a>
       <button class="hs-menu-toggle" type="button" aria-expanded="false" aria-controls="hs-nav">Menu</button>
       <nav class="hs-nav" id="hs-nav" aria-label="Your account">
         <a href="#/stays">Explore stays</a>

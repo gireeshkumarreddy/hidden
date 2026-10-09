@@ -15,7 +15,7 @@ if (playIntro) {
   html.classList.add('intro-on');
   if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
   scrollTo(0, 0);
-} else intro?.remove();
+} else { intro?.remove(); html.classList.remove('intro-boot'); }
 
 /* Home tour — chapters match the rendered film: one room every 3.45 s. */
 const CHAPTER = 3.45, LEAD = .575;
@@ -116,7 +116,7 @@ async function runIntro(tour) {
     removeEventListener('touchmove', skip);
     tour.start();
     document.body.classList.remove('intro-lock');
-    html.classList.remove('intro-on');
+    html.classList.remove('intro-on', 'intro-boot');
     html.classList.add('hero-ready');
     intro.animate([{ opacity: 1 }, { opacity: 0 }], { duration: fast ? 420 : 300, fill: 'forwards' }).finished.then(() => intro.remove());
   };
@@ -126,7 +126,6 @@ async function runIntro(tour) {
   addEventListener('keydown', onKey);
   addEventListener('wheel', skip, { passive: true });
   addEventListener('touchmove', skip, { passive: true });
-  $('.intro-skip', intro).focus({ preventScroll: true });
 
   requestAnimationFrame(() => intro.classList.add('play'));
   await wait(1550); if (finished) return;
@@ -254,7 +253,8 @@ function setupPointer() {
 function setupScrollUi(smooth) {
   const bar = $('.scroll-progress i'), toTop = $('#to-top'), ring = $('.to-top-ring', toTop), book = $('#book-bar');
   const hero = $('.hs-hero'), finder = $('#home-search'), footer = $('.site-footer');
-  let finderVisible = false, footerVisible = false, frame = 0;
+  let finderVisible = false, footerVisible = false, frame = 0, lastY = scrollY, tucked = false;
+  const narrow = matchMedia('(max-width: 800px)');
   const watch = new IntersectionObserver(entries => entries.forEach(entry => {
     if (entry.target === finder) finderVisible = entry.isIntersecting;
     if (entry.target === footer) footerVisible = entry.isIntersecting;
@@ -269,7 +269,10 @@ function setupScrollUi(smooth) {
     ring.style.strokeDashoffset = (1 - progress).toFixed(4);
     const showTop = scrollY > innerHeight * .9;
     toTop.classList.toggle('show', showTop); toTop.inert = !showTop;
-    const showBook = !document.body.classList.contains('app-mode') && scrollY > hero.offsetTop + hero.offsetHeight - innerHeight * .4 && !finderVisible && !footerVisible && !document.body.classList.contains('locked');
+    const y = scrollY;
+    if (narrow.matches) { if (y > lastY + 3) tucked = true; else if (y < lastY - 3) tucked = false; } else tucked = false;
+    lastY = y;
+    const showBook = !tucked && !document.body.classList.contains('app-mode') && y > hero.offsetTop + hero.offsetHeight - innerHeight * .4 && !finderVisible && !footerVisible && !document.body.classList.contains('locked');
     book.classList.toggle('show', showBook); book.inert = !showBook;
     document.body.classList.toggle('book-bar-on', showBook);
   }

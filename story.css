@@ -20,6 +20,7 @@ html{scroll-behavior:auto}
 .hs-arch-mark{width:30px;height:34px;fill:none;stroke:currentColor;stroke-width:1.4;opacity:.7}
 
 /* Line reveal */
+[data-lines] .lw{white-space:nowrap}
 [data-lines] .ln{display:block;overflow:hidden;padding-bottom:.06em;margin-bottom:-.06em}
 [data-lines] .ln-i{display:block;translate:0 108%;transition:translate 1.15s var(--ease-out);transition-delay:calc(var(--l) * 95ms)}
 [data-lines].in .ln-i{translate:0 0}
@@ -256,3 +257,63 @@ button.city-point:hover i,button.city-point:focus-visible i{background:var(--rub
 .static-story .dusk-list li{opacity:1}
 .static-story .dome-two-inner{position:relative;left:auto;top:auto;opacity:1;transform:none;padding:12vh 24px;margin:0 auto}
 .static-story .hs-dusk .hs-sticky{display:grid}
+
+
+/* ---------- Phones: readable, uncluttered, nothing hiding under the header ---------- */
+@media(max-width:800px){
+  .hs-header{padding:10px 14px;align-items:center;transition:color .5s,background .4s,box-shadow .4s}
+  .hs-emblem{width:54px;height:54px}
+  .hs-emblem .brand-art{width:28px}
+  .hs-emblem-ring{opacity:.85}
+  .hs-header-right{display:flex;align-items:center;gap:12px}
+  .hs-cta{font-family:var(--sans);font-stretch:normal;font-size:12px;font-weight:600;letter-spacing:.1em;line-height:1;padding:10px 14px;margin:0;border:1px solid currentColor;border-radius:30px}
+  .hs-cta br{display:none}
+  .hs-menu-toggle{border:0;padding:10px 2px}
+  .hs-header.is-scrolled[data-theme=dark]{background:rgba(247,242,232,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:0 1px 0 rgba(75,11,27,.12)}
+  .hs-header.is-scrolled[data-theme=light]{background:linear-gradient(180deg,rgba(26,9,7,.6),rgba(26,9,7,0))}
+  .hs-nav{top:70px}
+
+  .tour-mini{left:14px;right:14px;width:auto;bottom:calc(94vw * .3 + 16px);gap:8px 12px}
+  .tour-mini .tour-label{font-size:11px;letter-spacing:.14em}
+  .tour-mini #tour-local{font-size:22px}
+  #room-prev,#room-next{display:none}
+  .tour-mini .tour-controls button{width:40px;height:40px}
+
+  .hs-across{height:auto!important}
+  .hs-across .hs-sticky{position:relative;height:auto;overflow:hidden}
+  .across-track{display:block;width:auto;transform:none!important}
+  .panel{width:auto!important;height:auto;display:block;padding:12vh 22px}
+  .panel-concept{display:grid;justify-items:center;gap:22px;text-align:center;padding-top:16vh}
+  .panel-concept .display{font-size:27px;line-height:1.16}
+  .panel-concept .bloom-cascade,.hs-statement .bloom-cascade{height:26vh;left:-16vw;top:-5vh}
+  .panel-pearl{display:grid;gap:20px;padding-top:4vh}
+  .pearl-words{position:relative;inset:auto;display:grid;font-size:24vw;line-height:.86;margin:0;z-index:2;pointer-events:none}
+  .pearl-words span{position:static}
+  .pearl-words .w2{padding-left:16vw}
+  .pearl-words .w3{padding-left:6vw}
+  .pearl-country{position:static;font-size:11px;letter-spacing:.6em}
+  .pearl-photo{position:relative;left:auto;top:auto;width:100%;height:auto;aspect-ratio:4/5;margin-top:-18vw;z-index:1}
+  .pearl-copy{position:static;width:auto}
+  .panel-pearl .bloom-bush{height:20vh;left:auto;right:-24vw;bottom:auto;top:18vh;z-index:0}
+  .panel-map{display:grid;gap:24px;padding-top:4vh}
+  .map-title{position:static;justify-items:start;font-size:46px;margin:0}
+  .map-title .script{margin:-.1em 0 -.04em .6em}
+  .map-link{position:static;justify-self:start;order:3}
+  .city-map{position:relative;left:auto;right:auto;bottom:auto;aspect-ratio:auto}
+  .city-map svg{display:none}
+  .city-points{display:grid;border-left:1.5px solid var(--ink);margin-left:8px}
+  .city-point,.city-point.on{position:relative;left:auto!important;top:auto!important;translate:none;opacity:1;justify-items:start;text-align:left;padding:12px 0 12px 22px;white-space:normal;font-size:12px}
+  .city-point i{left:0;bottom:auto;top:50%;translate:-50% -50%;width:9px;height:9px}
+  .city-mark{grid-template-columns:auto 1fr;column-gap:8px;align-items:center}
+  .city-mark svg{grid-row:span 2;width:18px;height:20px;margin:0}
+
+  .hs-statement{padding:16vh 22px 14vh}
+  .hs-statement .display{font-size:27px;line-height:1.16}
+  .kind{display:flex;flex-direction:column;align-items:stretch;padding:10vh 22px;gap:18px}
+  .kind-word{order:1;position:relative;left:auto;bottom:auto;margin:0;font-size:22vw}
+  .kind-photo{order:2;height:52vh}
+  .kind-meta{order:3;margin:0;transform:none!important;display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline}
+  .kind-copy{order:4;margin:0}
+  .dusk-list{top:14vh;font-size:32px}
+  .dusk-note{bottom:12vh}
+}

@@ -136,3 +136,20 @@ dialog[open]::backdrop{animation:fadeIn .4s ease}
   .reveals-on [data-reveal],.reveals-on .split .w{opacity:1!important;translate:none!important;scale:none!important;filter:none!important;clip-path:none!important}
   .charminar path{stroke-dashoffset:0}
 }
+
+
+/* Smooth opening: the intro is visible from the first paint and the page holds still beneath it. */
+html{scrollbar-gutter:stable}
+.intro-boot #intro[hidden]{display:block!important}
+.intro-boot body{overflow:hidden;animation:introRelease 0s 10s forwards}
+.intro-boot #intro{animation:introFailsafe .4s 10s forwards}
+@keyframes introRelease{to{overflow:visible}}
+@keyframes introFailsafe{to{opacity:0;visibility:hidden}}
+.dome{transform:translate3d(-50%,120vh,0)}
+
+@media(max-width:800px){
+  .reveals-on [data-reveal]{transition-duration:.6s,.7s,.7s,.6s,.8s,.4s;transition-delay:calc(var(--i,0) * 50ms)}
+  [data-lines] .ln-i{transition-duration:.8s;transition-delay:calc(var(--l) * 60ms)}
+  .book-bar{padding:6px 6px 6px 16px}
+  .book-bar-title{font-size:15px}
+}

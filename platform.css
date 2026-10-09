@@ -387,3 +387,51 @@ body.app-mode .hs-rail{display:none}
   .pf-gallery-main{aspect-ratio:4/3}
   .pf-login-card{padding:26px 22px}
 }
+
+
+/* Trip planner: plain labels, a hint under each, a live summary, one clear action */
+.hp-search-lead{font-size:18px;line-height:1.6;max-width:560px;opacity:.85}
+.pf-plan{display:grid;gap:18px;width:min(1000px,100%);padding:26px 28px;background:var(--paper-2);border:1px solid var(--line-2);border-radius:20px;box-shadow:var(--shadow);text-align:left;color:var(--ink);margin-top:8px}
+.pf-plan-where{display:flex;align-items:center;gap:10px;font-size:15px}
+.pf-pin-icon{width:20px;height:20px;fill:none;stroke:var(--ruby);stroke-width:1.8;flex:none}
+.pf-plan-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.pf-plan-field{display:grid;align-content:start;padding:14px 16px;border:1px solid var(--line-2);border-radius:14px;background:#fff;cursor:pointer;transition:border-color .25s,box-shadow .25s}
+.pf-plan-field:focus-within{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink) inset}
+.pf-plan-label{font-size:15px;font-weight:600}
+.pf-plan-hint{font-size:13px;opacity:.65;margin:2px 0 8px}
+.pf-plan-field input{font:inherit;font-size:16px;border:0;padding:2px 0;background:none;color:var(--ink);width:100%;min-height:32px}
+.pf-plan-field input:focus{outline:none}
+.pf-plan-summary{font-size:15px;font-weight:500;padding-left:2px}
+.pf-plan-go{justify-self:start;min-width:250px;min-height:52px;font-size:15px}
+.pf-plan-toggle{display:none}
+.pf-search .pf-plan{width:100%;box-shadow:none;margin:0}
+.pf-results-head{flex-wrap:wrap}
+.pf-count{display:grid;gap:2px}
+.pf-count strong{font-size:18px;font-weight:600}
+.pf-count span{font-size:13px;opacity:.7}
+.pf-results-head .pf-tools{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.pf-results-head select{font:inherit;font-size:14px;color:var(--ink);border:1px solid var(--line-2);border-radius:30px;padding:10px 16px;background:#fff}
+
+@media(max-width:800px){
+  .pf-view{padding-top:92px}
+  .pf-head{margin-bottom:26px}
+  .hp-search{padding-top:12vh;gap:14px}
+  .hp-search .display-xl{font-size:17vw}
+  .hp-search-lead{font-size:16px}
+  .pf-plan{padding:18px;gap:14px;border-radius:18px}
+  .pf-plan-fields{grid-template-columns:1fr;gap:10px}
+  .pf-plan-field{padding:12px 14px}
+  .pf-plan-go{width:100%;min-width:0}
+  .pf-plan-toggle{display:flex;width:100%;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border:1px solid var(--line-2);border-radius:40px;background:var(--paper-2);color:var(--ink);font-size:14px;text-align:left}
+  .pf-plan-toggle-text{display:flex;align-items:center;gap:8px;min-width:0}
+  .pf-plan-toggle-text span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .pf-plan-toggle em{font-style:normal;font-weight:600;color:var(--ruby);text-decoration:underline;text-underline-offset:3px;flex:none}
+  .pf-plan-wrap{display:none;margin-top:12px}
+  .pf-search.plan-open .pf-plan-wrap{display:block}
+  .pf-search-body{margin-top:18px}
+  .pf-results-head{display:grid;gap:12px}
+  .pf-results-head .pf-tools{display:grid;grid-template-columns:1fr auto;gap:10px}
+  .pf-results-head select{grid-column:1/-1;width:100%}
+  .pf-results-head .pf-toggle{justify-self:start}
+  .pf-details-main h1{font-size:15vw}
+}
