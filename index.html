@@ -3,110 +3,221 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#4b0b1b">
+  <meta name="theme-color" content="#f7f2e8">
   <meta name="description" content="A considered collection of villas, heritage homes and residences in Hyderabad. Hidden Stories. Your stay, your story.">
   <title>Hidden Stories — Your Stay, Your Story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wdth,wght@62.5,300;62.5,400;62.5,500&family=Pinyon+Script&display=swap">
   <link rel="stylesheet" href="./fonts.css">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./reference-layout.css">
-  <link rel="preload" href="./assets/playfair-display-normal-400.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="preload" href="./assets/1616594039964-ae9021a400a0-1600.webp" as="image">
+  <link rel="stylesheet" href="./experience.css">
+  <link rel="stylesheet" href="./story.css">
+  <link rel="stylesheet" href="./platform.css">
+  <link rel="preload" href="./assets/home-tour-poster.webp" as="image">
   <script type="module" src="./app.js"></script>
 </head>
-<body>
-  <a class="skip-link" href="#collection">Skip to stays</a>
-  <header class="site-header" id="site-header">
-    <div class="header-inner">
-      <div class="header-left"><span>HYDERABAD, INDIA</span><button class="film-trigger" aria-label="Play Hidden Stories film">▷</button></div>
-      <button class="mobile-menu-trigger" aria-expanded="false" aria-controls="mobile-menu">Menu <span>+</span></button>
-      <a class="brand-link" href="#top" aria-label="Hidden Stories home">
-        <span class="brand-art brand-art-small"><img src="./assets/brand-frame.webp" alt="Hidden Stories — Your Stay, Your Story" width="1080" height="1920"></span>
-        <span class="brand-name">HIDDEN <i>STORIES</i></span>
-      </a>
-      <div class="header-right"><a class="journal-link" href="#moments">The little things</a><button class="text-link plan-trigger">Find your stay <span aria-hidden="true">↗</span></button></div>
+<body class="story-page">
+  <a class="skip-link" href="#/stays">Skip to stays</a>
+  <div class="intro" id="intro" hidden>
+    <svg class="intro-door" viewBox="-50 -50 100 100" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <path class="intro-wall" fill-rule="evenodd" d="M-3000-3000H3000V3000H-3000Z M-6 13V2C-6-2.6-3-5.8 0-8C3-5.8 6-2.6 6 2V13Z"/>
+      <path class="intro-plug" d="M-6 13V2C-6-2.6-3-5.8 0-8C3-5.8 6-2.6 6 2V13Z"/>
+      <path class="intro-outline" pathLength="1" d="M-6 13V2C-6-2.6-3-5.8 0-8C3-5.8 6-2.6 6 2V13"/>
+    </svg>
+    <div class="intro-copy">
+      <p class="intro-greeting"><span lang="ur" dir="rtl">خوش آمدید</span><i aria-hidden="true"></i><span lang="te">స్వాగతం</span><i aria-hidden="true"></i><span>Khush aamdeed</span></p>
+      <p class="intro-title">Make yourself <em>at home.</em></p>
     </div>
-    <nav class="reference-nav" aria-label="Main navigation"><a href="#top">HOME</a><a href="#collection">STAY</a><a href="#story">OUR STORY</a><a href="#moments">EXPERIENCES</a><a href="#destination">LOCATION</a></nav>
-  </header>
-  <div class="mobile-menu" id="mobile-menu" hidden>
-    <nav aria-label="Mobile navigation"><a href="#collection">The collection <span>01</span></a><a href="#story">Our story <span>02</span></a><a href="#moments">The little things <span>03</span></a><a href="#destination">Hyderabad <span>04</span></a></nav>
-    <p>YOUR STAY. YOUR STORY.</p>
+    <button class="intro-skip" type="button">Skip intro</button>
   </div>
+
+  <header class="hs-header" id="site-header" data-theme="light">
+    <a class="hs-emblem" href="#top" aria-label="Hidden Stories home">
+      <svg class="hs-emblem-ring" viewBox="0 0 120 120" aria-hidden="true"><defs><path id="emblem-ring" d="M60 60m-47 0a47 47 0 1 1 94 0a47 47 0 1 1-94 0"/></defs><text><textPath href="#emblem-ring" textLength="292">HIDDEN STORIES · YOUR STAY · YOUR STORY ·</textPath></text></svg>
+      <span class="brand-art brand-art-small"><img src="./assets/brand-frame.webp" alt="" width="1080" height="1920"></span>
+    </a>
+    <div class="hs-header-right">
+      <a class="hs-cta" href="#/stays">Find your<br>stay</a>
+      <button class="hs-menu-toggle" type="button" aria-expanded="false" aria-controls="hs-nav">Menu</button>
+      <nav class="hs-nav" id="hs-nav" aria-label="Your account">
+        <a href="#/stays">Explore stays</a>
+        <a href="#/wishlist">Wishlist <sup data-count="wishlist"></sup></a>
+        <a href="#/trips">Trips <sup data-count="trips"></sup></a>
+        <a href="#/inbox">Inbox</a>
+        <a class="hs-account" href="#/login" data-account>Sign in</a>
+      </nav>
+      <span class="ist-clock" aria-label="Local time in Hyderabad"></span>
+    </div>
+  </header>
+  <div class="hs-rail" aria-hidden="true"><span>Scroll</span><i><b></b></i></div>
+
   <main>
-    <section class="hero-scroll" id="top" aria-labelledby="hero-title">
-      <div class="hero-stage">
-        <div class="hero-heading">
-          <h1 id="hero-title" class="source-headline"><span>Stays that become</span><span><em>stories</em> worth telling</span></h1>
-          <p class="hero-description">Your own quiet corner of the world. Thoughtful rooms, warm textures and the kind of comfort that lets you settle in, slow down, and make yourself at home.</p>
+    <!-- Hero: the home-tour film, with the dome of three reasons rising over it -->
+    <section class="hs-hero" id="top" data-header="light" aria-label="A walk through a Hidden Stories home">
+      <div class="hs-sticky">
+        <div class="hs-hero-media">
+          <video class="hero-video" muted loop playsinline preload="auto" poster="./assets/home-tour-poster.webp" data-src-wide="./assets/home-tour-1920.mp4" data-src-tall="./assets/home-tour-portrait-720.mp4" aria-label="A walk-through film of a Hidden Stories home: arriving at dusk, the pool lawn, the living room, the dining table, the master suite and the pool"></video>
+          <div class="film-grain" aria-hidden="true"></div>
         </div>
-        <p class="vertical-note note-left">HIDDEN STORIES · HIDDEN STORIES</p><p class="vertical-note note-right">YOUR STAY · YOUR STORY</p>
-        <figure class="hero-photo">
-          <img src="./assets/1616594039964-ae9021a400a0-1600.webp" srcset="./assets/1616594039964-ae9021a400a0-800.webp 800w, ./assets/1616594039964-ae9021a400a0-1600.webp 1600w, ./assets/1616594039964-ae9021a400a0-2400.webp 2400w, ./assets/1616594039964-ae9021a400a0-3840.webp 3840w" sizes="100vw" alt="A softly lit bedroom with warm textiles and sculptural brass lighting" width="2400" height="1600" fetchpriority="high">
-          <figcaption class="hero-film-caption"><span class="eyebrow">YOUR STAY, YOUR STORY</span><span>Make yourself<br><em>somewhere else.</em></span><button class="outline-button film-trigger">Watch the film <span aria-hidden="true">▷</span></button></figcaption>
-          <div class="room-caption"><span id="room-caption-text">01 · A ROOM FOR YOUR OWN STORY</span><div><button id="room-prev" aria-label="Previous room photograph">←</button><button id="room-next" aria-label="Next room photograph">→</button></div></div>
-        </figure>
-        <div class="hero-bottom"><span>01 / THE FEELING OF ARRIVING</span><a href="#introduction">Scroll to uncover <span aria-hidden="true">↓</span></a><span>HIDDEN STORIES, INDIA</span></div>
-        <div class="hero-curtain" aria-hidden="true"></div>
+        <div class="tour-mini">
+          <div class="tour-label"><span id="room-caption-text">01 · THE ARRIVAL</span><em id="tour-local">Tashreef laaiye <small>— do come in</small></em></div>
+          <div class="tour-progress" id="tour-progress" aria-hidden="true"></div>
+          <div class="tour-controls"><button id="room-prev" type="button" aria-label="Previous room in the tour">←</button><button id="tour-toggle" type="button" aria-label="Pause the home tour" aria-pressed="false"><span class="tour-pause" aria-hidden="true"></span></button><button id="room-next" type="button" aria-label="Next room in the tour">→</button></div>
+        </div>
+        <a class="hs-hero-link" href="#/stays">View available homes</a>
+        <div class="dome" id="hero-dome" aria-hidden="true">
+          <svg class="dome-art" viewBox="0 0 1000 1000">
+            <defs><path id="dome-arc" d="M139.6 247.6A440 440 0 0 1 860.4 247.6"/></defs>
+            <text class="dome-arc-text"><textPath href="#dome-arc" startOffset="50%" text-anchor="middle">Three reasons to choose Hidden Stories</textPath></text>
+            <text class="dome-side" x="404" y="356" text-anchor="end">HYDERABAD</text>
+            <path class="dome-arch" d="M490 372V352c0-9 4-15 10-20 6 5 10 11 10 20v20z"/>
+            <text class="dome-side" x="596" y="356">INDIA</text>
+            <path class="dome-line" d="M500 392V560"/>
+            <text class="dome-caption" x="500" y="600" text-anchor="middle">A PLACE TO STAY — AND TO RETURN TO,</text>
+            <text class="dome-caption" x="500" y="622" text-anchor="middle">YEAR AFTER YEAR</text>
+          </svg>
+        </div>
       </div>
     </section>
 
-    <section class="introduction environment section-pad" id="introduction" data-tone="cream" aria-labelledby="intro-title">
-      <img class="canoe" src="./assets/canoe-exact.png" alt="A hand-painted green canoe" width="830" height="344">
-      <div class="grand-intro reveal"><h2 id="intro-title">GRAND ROOMS &amp;<br>QUIET MOMENTS</h2><p>A considered collection of villas, heritage homes and city residences.<br>Beautiful spaces with a sense of place. A little room for your own story.</p></div>
-      <div class="villa-showcase" aria-label="Architecture inspiration carousel">
-        <div class="villa-heading"><h3>Villas &amp; Residences</h3><p>Room to wander. Space to breathe.<br>A visual journey through the landscapes of Toscana Valley.</p></div>
-        <div class="villa-panorama"><img class="villa-peek peek-left" src="./assets/villa-lake-1600.webp" alt="Tuscan-style villas beside a lake" loading="lazy" srcset="./assets/villa-lake-800.webp 800w, ./assets/villa-lake-1600.webp 1600w, ./assets/villa-lake-1920.webp 1920w" sizes="65vw" width="1920" height="982"><div class="villa-main"><img id="villa-main-photo" src="./assets/villa-lake-1600.webp" alt="Toscana Valley villas beneath forested mountains" loading="lazy" srcset="./assets/villa-lake-800.webp 800w, ./assets/villa-lake-1600.webp 1600w, ./assets/villa-lake-1920.webp 1920w" sizes="65vw" width="1920" height="982"><button class="villa-hotspot hotspot-one" data-hotspot="villas" aria-label="Show villa information" aria-expanded="true">−</button><button class="villa-hotspot hotspot-two" data-hotspot="landscape" aria-label="Show landscape information" aria-expanded="false">+</button><button class="villa-hotspot hotspot-three" data-hotspot="condo" aria-label="Show residence information" aria-expanded="false">+</button><div class="villa-info" id="villa-info"><strong>THE VILLAS</strong><dl><dt>Setting</dt><dd>Khao Yai, Thailand</dd><dt>Architecture</dt><dd>Tuscan inspired</dd></dl><a href="https://toscanavalley.com/land-villas/" target="_blank" rel="noopener noreferrer">Discover Toscana Valley ↗</a></div></div><img class="villa-peek peek-right" src="./assets/villa-condo-1600.webp" alt="Warm terracotta residences in a lush landscape" loading="lazy" srcset="./assets/villa-condo-800.webp 800w, ./assets/villa-condo-1600.webp 1600w, ./assets/villa-condo-1920.webp 1920w" sizes="65vw" width="1920" height="982"><button id="villa-prev" class="villa-arrow arrow-left" aria-label="Previous landscape">← VILLAS</button><button id="villa-next" class="villa-arrow arrow-right" aria-label="Next landscape">CONDO →</button></div>
-        <div class="villa-pagination"><span id="villa-count" aria-live="polite">01 / 03</span><span class="villa-progress"><i></i></span></div>
+    <!-- Reason one: a headline, then a small photograph that grows to fill the screen -->
+    <section class="hs-grow" id="reasons" data-header="dark" aria-labelledby="reason-one">
+      <div class="grow-head">
+        <p class="hs-kicker">Reason 01 of 03</p>
+        <h2 class="display display-xl" id="reason-one" data-lines>Real-life Hyderabad</h2>
       </div>
-      <div class="opportunities reveal"><h2><span><em>U</em>NIQUE</span><span><em>O</em>PPORTUNITIES</span><span><small>FOR</small> <em>E</em>VERY STAY</span></h2><div class="opportunity-collage"><img class="collage-main" src="./assets/golf-800.webp" alt="A sunlit golf course set among rolling hills" loading="lazy" srcset="./assets/golf-800.webp 800w, ./assets/golf-820.webp 820w" sizes="65vw" width="820" height="462"><div class="collage-side"><div><img src="./assets/villa-land-800.webp" alt="A warm, light-filled residence interior" loading="lazy" srcset="./assets/villa-land-800.webp 800w, ./assets/villa-land-820.webp 820w" sizes="65vw" width="820" height="532"><img src="./assets/dining-430.webp" alt="Toscana Valley courtyard and architecture" loading="lazy" srcset="./assets/dining-430.webp 430w" sizes="65vw" width="430" height="538"></div><p>THE BEST PLACES GIVE YOU MORE THAN A VIEW. SPACE TO WANDER, TIME TO RECONNECT, AND SMALL MOMENTS THAT BECOME THE WHOLE STORY.</p><a href="#moments">VIEW MORE ↗</a></div></div></div>
-
+      <div class="grow-pin" data-scene="grow">
+        <div class="hs-sticky">
+          <div class="grow-before">
+            <p class="hs-body">Jubilee Hills, Banjara Hills, Gachibowli or the mango orchards of Shamshabad — every Hidden Stories home sits in a real neighbourhood, close to the parks, lakes and Irani cafés that locals love.</p>
+            <a class="hs-link" href="#/stays">Designed as a home, not a hotel</a>
+          </div>
+          <figure class="grow-frame">
+            <img src="./assets/1600596542815-ffad4c1539a9-2400.webp" srcset="./assets/1600596542815-ffad4c1539a9-1600.webp 1600w, ./assets/1600596542815-ffad4c1539a9-2400.webp 2400w, ./assets/1600596542815-ffad4c1539a9-3840.webp 3840w" sizes="100vw" alt="A white villa with a long private pool in the afternoon sun" width="2400" height="1593" loading="lazy">
+          </figure>
+          <div class="grow-over" data-header-zone="light">
+            <p class="display display-s" data-lines>Instead of lobbies and corridors, a front door of your own — a home on a leafy lane, where the Irani café knows your order by the second morning.</p>
+            <p class="hs-small">Homes, not hotels</p>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <section class="story environment section-pad" id="story" data-tone="cream" aria-labelledby="story-title">
-      <div class="mission-grid"><div class="mission-copy"><p class="eyebrow">Our mission</p><h2 id="story-title"><em>Hidden Stories</em> brings<br>thoughtful spaces<br>and extraordinary<br><em>everyday moments</em><br>together.</h2><p>Homes with character, comfort and a sense of place. From leafy neighbourhoods to quieter city edges, our collection leaves room for your own rituals.</p><button class="mission-cta film-trigger">OUR STORY <span>→</span></button></div><div class="mission-picture"><img src="./assets/1600585154340-be6161a56a0c-1600.webp" srcset="./assets/1600585154340-be6161a56a0c-1600.webp 1600w, ./assets/1600585154340-be6161a56a0c-3840.webp 3840w" sizes="30vw" alt="A quiet home surrounded by trees" loading="lazy"></div><div class="mission-statement"><p>OUR MISSION IS TO BRING TOGETHER EXCEPTIONAL HOMES AND CONSIDERED COMFORT. BEAUTIFUL PLACES FOR UNHURRIED DAYS, SHARED TABLES AND MEMORIES THAT STAY WITH YOU.</p></div></div>
+    <!-- Reason two: a sideways journey from the concept to the city map -->
+    <section class="hs-across" id="city" data-header="dark" data-scene="across" aria-label="The concept and the city">
+      <div class="hs-sticky">
+        <div class="across-track">
+          <article class="panel panel-concept">
+            <img class="bloom bloom-cascade" src="./assets/bougainvillea-cascade.webp" alt="" width="1400" height="1100" data-drift="-60">
+            <p class="hs-kicker">The concept</p>
+            <p class="display display-m" data-lines>Hidden Stories is a considered collection of eight homes — villas, heritage houses and city residences — chosen for privacy, character and the slow, generous rhythm of Hyderabadi life.</p>
+            <p class="hs-body hs-centre">Khush aamdeed. Make yourself at home — whether it's a long weekend with the whole family or a quiet week of work.</p>
+            <svg class="hs-arch-mark" viewBox="0 0 40 44" aria-hidden="true"><path d="M8 42V22C8 13 14 7 20 3c6 4 12 10 12 19v20M4 42h32"/></svg>
+          </article>
+          <article class="panel panel-pearl">
+            <img class="bloom bloom-bush" src="./assets/bougainvillea-bush.webp" alt="" width="1600" height="900" data-drift="40">
+            <h2 class="pearl-words display" aria-label="The Pearl City"><span class="w1">The</span><span class="w2">Pearl</span><span class="w3">City</span></h2>
+            <span class="pearl-country">India</span>
+            <figure class="pearl-photo"><img src="./assets/1600566753086-00f18fb6b3ea-1600.webp" srcset="./assets/1600566753086-00f18fb6b3ea-1600.webp 1600w, ./assets/1600566753086-00f18fb6b3ea-2400.webp 2400w" sizes="40vw" alt="A bright living room with an open staircase and a dog asleep on the rug" width="1600" height="1066" loading="lazy"></figure>
+            <div class="pearl-copy">
+              <h3 class="display display-s">Between Charminar and HITEC City</h3>
+              <p class="hs-body">From the old city's arches to the glass towers of the west, our homes sit where Hyderabad feels most like itself.</p>
+              <a class="hs-link" href="#/stays">View available homes</a>
+            </div>
+          </article>
+          <article class="panel panel-map">
+            <img class="bloom bloom-cascade bloom-flip" src="./assets/bougainvillea-cascade.webp" alt="" width="1400" height="1100" data-drift="-50">
+            <a class="hs-link map-link" href="#/stays">View available homes</a>
+            <h2 class="map-title display"><span>The city you wanted</span><em class="script">yours</em><span>this season</span></h2>
+            <div class="city-map" id="city-map">
+              <svg viewBox="0 0 1400 260" preserveAspectRatio="none" aria-hidden="true"><path id="city-line" pathLength="1" d="M0 196C110 200 150 128 250 146S410 214 520 178 650 104 740 142 880 206 980 166 1130 92 1220 132 1340 196 1400 176"/></svg>
+              <div class="city-points" id="city-points"></div>
+            </div>
+          </article>
+        </div>
+      </div>
     </section>
 
-    <section class="moments environment" id="moments" data-tone="cream" aria-labelledby="moments-title">
-      <div class="moments-sticky"><div class="moments-heading section-pad"><div><p class="eyebrow">A LITTLE MORE TO REMEMBER</p><h2 id="moments-title">Experiences</h2></div><p class="body-copy">No grand plans required.<br>Just the right place to be.</p><span class="moment-counter" aria-hidden="true">01 / 04</span></div><div class="moments-window"><div class="moments-track">
-        <a class="moment-card" href="#collection" data-category-link="villa"><figure><img src="./assets/1613977257363-707ba9348227-1600.webp" alt="A private swimming pool surrounded by garden terraces" width="1600" height="1100" loading="lazy"></figure><div><span class="eyebrow">01 / THE WEEKEND, UNHURRIED</span><h3>Poolside, <em>with no plans.</em></h3><span aria-hidden="true">↗</span></div></a>
-        <a class="moment-card" href="#collection" data-category-link="city"><figure><img src="./assets/1615874959474-d609969a20ed-1600.webp" alt="A tranquil bedroom filled with morning light" width="1600" height="1100" loading="lazy"></figure><div><span class="eyebrow">02 / MORNINGS, RECLAIMED</span><h3>Sleep in. <em>Stay a little.</em></h3><span aria-hidden="true">↗</span></div></a>
-        <a class="moment-card" href="#collection" data-category-link="heritage"><figure><img src="./assets/1600566753086-00f18fb6b3ea-1600.webp" alt="A generous living and dining room with a table for gathering" width="1600" height="1100" loading="lazy"></figure><div><span class="eyebrow">03 / YOUR PEOPLE, TOGETHER</span><h3>A table <em>for everyone.</em></h3><span aria-hidden="true">↗</span></div></a>
-        <a class="moment-card" href="#collection" data-category-link="city"><figure><img src="./assets/1616486338812-3dadae4b4ace-1600.webp" alt="A soft, quiet living space with natural woven furnishings" width="1600" height="1100" loading="lazy"></figure><div><span class="eyebrow">04 / A DIFFERENT EVERYDAY</span><h3>Work less hurried. <em>Live more.</em></h3><span aria-hidden="true">↗</span></div></a>
-      </div></div><div class="moments-progress" aria-hidden="true"><span></span></div></div>
+    <!-- Clouds part to reveal the arrival at dusk -->
+    <section class="hs-clouds" data-header="dark" data-scene="clouds" aria-label="Arriving at dusk">
+      <div class="hs-sticky">
+        <div class="clouds-aerial"><img src="./assets/1505843513577-22bb7d21e455-2400.webp" srcset="./assets/1505843513577-22bb7d21e455-1600.webp 1600w, ./assets/1505843513577-22bb7d21e455-2400.webp 2400w, ./assets/1505843513577-22bb7d21e455-3840.webp 3840w" sizes="100vw" alt="A grand family home glowing at dusk across a wide lawn" width="2400" height="1350" loading="lazy"></div>
+        <div class="clouds-strip">
+          <div class="clouds-cream"></div>
+          <img class="clouds-edge clouds-edge-back" src="./assets/clouds-back.webp" alt="" width="2400" height="900">
+          <img class="clouds-edge" src="./assets/clouds-front.webp" alt="" width="2400" height="900">
+          <div class="clouds-body"></div>
+          <img class="clouds-edge clouds-edge-under" src="./assets/clouds-front.webp" alt="" width="2400" height="900">
+        </div>
+      </div>
     </section>
 
-    <section class="coastal-edit environment section-pad" id="coastal-edit" data-tone="cream" aria-labelledby="coastal-title"><svg class="coastal-waves" viewBox="0 0 1400 100" preserveAspectRatio="none" aria-hidden="true"><path d="M-40 30C240 180 380-65 730 25S1120 135 1440 28M-40 45C210 165 510-40 830 43S1180 120 1440 10"/></svg><div class="coastal-heading"><a href="#reference-grid">The coastal edit</a><h2 id="coastal-title">Our inspirations</h2><p>Six characterful coastal homes from Atlanta Trevone.<br>A collection of spaces that invite a slower way of living.</p></div><div class="reference-grid" id="reference-grid"><article class="reference-card"><img src="./assets/reference-stay-01-800.webp" alt="Atlanta House interior, photographed for Atlanta Trevone" loading="lazy" srcset="./assets/reference-stay-01-800.webp 800w, ./assets/reference-stay-01-1600.webp 1600w, ./assets/reference-stay-01-2048.webp 2048w" sizes="(max-width:700px) 88vw, 30vw" width="2048" height="1534"><span class="category-chip"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 9 10 2l8 7M5 8v10h10V8M8 18v-6h4v6"/></svg>House</span><span class="reference-facts"><svg viewBox="0 0 22 20" aria-hidden="true"><path d="M2 17V5m18 12V9H2m2 0V5h6v4m2 0V5h6v4M2 13h18"/></svg>4<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3"/><path d="M5 18v-5a5 5 0 0 1 10 0v5"/></svg>8</span><div class="reference-card-copy"><h3>Atlanta House</h3><p>Clifftop calm, generous rooms and a cosy place to gather.</p><a href="https://atlantatrevonebay.com/our-properties/atlanta-house/" target="_blank" rel="noopener noreferrer">Learn more</a></div></article><article class="reference-card"><img src="./assets/reference-stay-02-800.webp" alt="The Penthouse interior, photographed for Atlanta Trevone" loading="lazy" srcset="./assets/reference-stay-02-800.webp 800w, ./assets/reference-stay-02-1600.webp 1600w, ./assets/reference-stay-02-2286.webp 2286w" sizes="(max-width:700px) 88vw, 30vw" width="2286" height="3200"><span class="category-chip"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 9 10 2l8 7M5 8v10h10V8M8 18v-6h4v6"/></svg>Apartment</span><span class="reference-facts"><svg viewBox="0 0 22 20" aria-hidden="true"><path d="M2 17V5m18 12V9H2m2 0V5h6v4m2 0V5h6v4M2 13h18"/></svg>4<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3"/><path d="M5 18v-5a5 5 0 0 1 10 0v5"/></svg>8</span><div class="reference-card-copy"><h3>The Penthouse</h3><p>Thoughtful interiors and an open view towards the Cornish coast.</p><a href="https://atlantatrevonebay.com/our-properties/atlanta-penthouse/" target="_blank" rel="noopener noreferrer">Learn more</a></div></article><article class="reference-card"><img src="./assets/reference-stay-03-800.webp" alt="One Atlanta interior, photographed for Atlanta Trevone" loading="lazy" srcset="./assets/reference-stay-03-800.webp 800w, ./assets/reference-stay-03-1024.webp 1024w" sizes="(max-width:700px) 88vw, 30vw" width="1024" height="1280"><span class="category-chip"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 9 10 2l8 7M5 8v10h10V8M8 18v-6h4v6"/></svg>House</span><span class="reference-facts"><svg viewBox="0 0 22 20" aria-hidden="true"><path d="M2 17V5m18 12V9H2m2 0V5h6v4m2 0V5h6v4M2 13h18"/></svg>3<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3"/><path d="M5 18v-5a5 5 0 0 1 10 0v5"/></svg>6</span><div class="reference-card-copy"><h3>One Atlanta</h3><p>Warm textures, quiet corners and character by the sea.</p><a href="https://atlantatrevonebay.com/our-properties/one-atlanta/" target="_blank" rel="noopener noreferrer">Learn more</a></div></article><article class="reference-card"><img src="./assets/reference-stay-04-800.webp" alt="The Net Loft interior, photographed for Atlanta Trevone" loading="lazy" srcset="./assets/reference-stay-04-800.webp 800w, ./assets/reference-stay-04-1600.webp 1600w, ./assets/reference-stay-04-2048.webp 2048w" sizes="(max-width:700px) 88vw, 30vw" width="2048" height="2560"><span class="category-chip"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 9 10 2l8 7M5 8v10h10V8M8 18v-6h4v6"/></svg>House</span><span class="reference-facts"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3"/><path d="M5 18v-5a5 5 0 0 1 10 0v5"/></svg>4</span><div class="reference-card-copy"><h3>The Net Loft</h3><p>Maritime details and a welcoming table for unhurried evenings.</p><a href="https://atlantatrevonebay.com/our-properties/the-net-loft/" target="_blank" rel="noopener noreferrer">Learn more</a></div></article><article class="reference-card"><img src="./assets/reference-stay-05-800.webp" alt="Atlanta View interior, photographed for Atlanta Trevone" loading="lazy" srcset="./assets/reference-stay-05-800.webp 800w, ./assets/reference-stay-05-1600.webp 1600w, ./assets/reference-stay-05-2048.webp 2048w" sizes="(max-width:700px) 88vw, 30vw" width="2048" height="2734"><span class="category-chip"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 9 10 2l8 7M5 8v10h10V8M8 18v-6h4v6"/></svg>Apartment</span><span class="reference-facts"><svg viewBox="0 0 22 20" aria-hidden="true"><path d="M2 17V5m18 12V9H2m2 0V5h6v4m2 0V5h6v4M2 13h18"/></svg>3<svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3"/><path d="M5 18v-5a5 5 0 0 1 10 0v5"/></svg>5</span><div class="reference-card-copy"><h3>Atlanta View</h3><p>Books, soft light and a comfortable corner to call your own.</p><a href="https://atlantatrevonebay.com/our-properties/little-atlanta/" target="_blank" rel="noopener noreferrer">Learn more</a></div></article><article class="reference-card"><img src="./assets/reference-stay-06-800.webp" alt="Plum Cottage interior, photographed for Atlanta Trevone" loading="lazy" srcset="./assets/reference-stay-06-800.webp 800w, ./assets/reference-stay-06-1600.webp 1600w, ./assets/reference-stay-06-2250.webp 2250w" sizes="(max-width:700px) 88vw, 30vw" width="2250" height="3000"><span class="category-chip"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M2 9 10 2l8 7M5 8v10h10V8M8 18v-6h4v6"/></svg>House</span><span class="reference-facts"><svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="10" cy="5" r="3"/><path d="M5 18v-5a5 5 0 0 1 10 0v5"/></svg>4</span><div class="reference-card-copy"><h3>Plum Cottage</h3><p>A colourful, characterful cottage in the heart of Padstow.</p><a href="https://atlantatrevonebay.com/our-properties/plum-cottage-padstow/" target="_blank" rel="noopener noreferrer">Learn more</a></div></article></div><div class="coastal-contact"><div><h2>A little closer<br>to the coast.</h2><span class="location-chip">⌖ Trevone Bay, Cornwall</span><p>Sea air, long walks and quiet corners.<br>Discover the setting behind this coastal edit.</p><a href="https://atlantatrevonebay.com/" target="_blank" rel="noopener noreferrer" class="pill-button">Discover Trevone ↗</a></div><img src="./assets/reference-stay-07-1600.webp" alt="White coastal houses above the rocky shoreline at Trevone Bay" loading="lazy" srcset="./assets/reference-stay-07-800.webp 800w, ./assets/reference-stay-07-1600.webp 1600w, ./assets/reference-stay-07-2048.webp 2048w" sizes="(max-width:700px) 88vw, 30vw" width="2048" height="1536"></div></section>
-    <section class="collection environment section-pad" id="collection" data-tone="red" aria-labelledby="collection-title">
-      <div class="section-topline"><span class="eyebrow">THE HIDDEN STORIES COLLECTION</span><span class="small-number">02 — 04</span></div>
-      <div class="collection-heading"><h2 class="editorial-title reveal" id="collection-title">A few places.<br><em>Endless possibilities.</em></h2><p class="body-copy reveal">A villa for the whole family.<br>A home for a slower weekend.<br>An address that is entirely you.</p></div>
-      <form class="stay-finder" id="stay-finder" aria-labelledby="finder-title" aria-describedby="finder-help">
-        <div class="finder-intro"><div><span class="eyebrow">PLAN YOUR STAY</span><h3 id="finder-title">Where will you<br><em>make a memory?</em></h3></div><p id="finder-help">Choose your neighbourhood, dates and guests.<br>Explore your matching stays right below.</p></div>
-        <label class="finder-field finder-destination"><span>Where would you like to stay?</span><span class="finder-control"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/><circle cx="12" cy="10" r="2.5"/></svg><select name="destination" id="destination-select"><option value="">Anywhere in Hyderabad</option>Jubilee Hills</option>Gachibowli</option>Shamshabad</option>Banjara Hills</option>Begumpet</option>Film Nagar</option>Kokapet</option>HITEC City</option></select><svg class="finder-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></span></label>
-        <label class="finder-field"><span>Check-in</span><span class="finder-control"><input type="date" name="arrival" aria-label="Check-in date" aria-describedby="finder-dates-help"></span></label>
-        <label class="finder-field"><span>Check-out</span><span class="finder-control"><input type="date" name="departure" aria-label="Check-out date" aria-describedby="finder-dates-help"></span></label>
-        <label class="finder-field guest-label"><span>Guests</span><span class="finder-control"><select name="guests"><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="4">4 guests</option><option value="6">6 guests</option><option value="8">8 guests</option><option value="10">10 guests</option><option value="12">12 guests</option></select><svg class="finder-chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg></span></label>
-        <button class="finder-submit" type="submit"><span>Find my stay</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6"/></svg></button>
-        <p class="finder-hint" id="finder-dates-help">Dates undecided? Leave them blank and explore the collection.</p>
-        <p class="form-error" id="finder-error" aria-live="polite"></p>
-      </form>
-      <div class="collection-tools" id="collection-results"><div class="filters" role="group" aria-label="Filter stays"><button data-filter="all" aria-pressed="true">All stays <sup>08</sup></button><button data-filter="villa" aria-pressed="false">Villas & escapes</button><button data-filter="heritage" aria-pressed="false">Heritage & homes</button><button data-filter="city" aria-pressed="false">City residences</button><button data-filter="saved" aria-pressed="false">Saved <sup id="saved-count">0</sup></button></div><span class="collection-count" id="collection-count" role="status">08 places to call your own</span></div>
-      <div class="search-summary" id="search-summary" hidden><span></span><button id="clear-search" class="text-link">Clear search ×</button></div>
-      <div class="stay-grid" id="stay-grid"></div>
-      <div class="empty-state" id="empty-state" hidden><h3>A different kind of escape?</h3><p>Try another neighbourhood or a smaller group.</p><button class="outline-button" id="reset-filters">See the full collection ↗</button></div>
-      <noscript><p>Enable JavaScript to explore and filter the collection, or <a href="https://www.hiddenstories.in/">visit Hidden Stories</a>.</p></noscript>
-      <p class="collection-footnote">A considered collection. A stay to remember.</p>
+    <!-- The homes, by kind: each photograph opens from a sliver -->
+    <section class="hs-kinds" id="homes" data-header="dark" aria-labelledby="kinds-title">
+      <h2 class="visually-hidden" id="kinds-title">The homes, by kind</h2>
+      <div class="kinds-list" id="kinds-list"></div>
     </section>
 
-    <section class="destination environment" id="destination" data-tone="red" aria-labelledby="destination-title">
-      <div class="destination-photo"><img src="./assets/1600585154340-be6161a56a0c-2400.webp" srcset="./assets/1600585154340-be6161a56a0c-800.webp 800w, ./assets/1600585154340-be6161a56a0c-1600.webp 1600w, ./assets/1600585154340-be6161a56a0c-2400.webp 2400w, ./assets/1600585154340-be6161a56a0c-3840.webp 3840w" sizes="100vw" alt="A private home beneath mature trees, its windows glowing at dusk" width="2400" height="1600" loading="lazy"></div>
-      <div class="destination-copy section-pad"><div class="section-topline"><span class="eyebrow">MANY NEIGHBOURHOODS. ONE CITY.</span><span class="small-number">04 — 04</span></div><h2 class="reveal" id="destination-title">Hyderabad.<br><em>A little closer.</em></h2><p class="reveal">From the leafy streets of Jubilee Hills to<br>the slower edges of Shamshabad.<br>Find your own corner of the city.</p><a class="outline-button reveal" href="#collection" id="explore-hyderabad">Explore our Hyderabad stays <span>↗</span></a></div>
+    <section class="hs-statement" data-header="dark">
+      <img class="bloom bloom-cascade" src="./assets/bougainvillea-cascade.webp" alt="" width="1400" height="1100" data-drift="-70">
+      <p class="hs-kicker">The homes</p>
+      <p class="display display-m" data-lines>Homes range from one-bedroom city suites to five-bedroom heritage houses, with private pools, shaded verandas and room for everyone at the table.</p>
+      <svg class="hs-arch-mark" viewBox="0 0 40 44" aria-hidden="true"><path d="M8 42V22C8 13 14 7 20 3c6 4 12 10 12 19v20M4 42h32"/></svg>
     </section>
 
+    <!-- Reason three: what's inside, then the second dome -->
+    <section class="hs-dusk" data-header="light" data-scene="dusk" aria-labelledby="space-title">
+      <div class="hs-sticky">
+        <div class="dusk-media"><img src="./assets/1600585154340-be6161a56a0c-2400.webp" srcset="./assets/1600585154340-be6161a56a0c-1600.webp 1600w, ./assets/1600585154340-be6161a56a0c-2400.webp 2400w, ./assets/1600585154340-be6161a56a0c-3840.webp 3840w" sizes="100vw" alt="A modern home under an old tree, its rooms glowing at dusk" width="2400" height="1600" loading="lazy"></div>
+        <ul class="dusk-list" id="dusk-list"><li>Private pools</li><li>Full kitchens</li><li>Quiet workspaces</li><li>Pet-friendly homes</li><li>Parking at the door</li></ul>
+        <p class="dusk-note display display-xs">Each home is chosen for how it feels on an ordinary Tuesday — not just how it looks in a photograph.</p>
+        <div class="dome dome-two" id="dusk-dome" aria-hidden="true"></div>
+        <div class="dome-two-inner">
+          <p class="hs-kicker">Reason 03 of 03</p>
+          <h2 class="space-title display" id="space-title"><span>The</span><span>space</span><span>to</span><em class="script">Live in</em></h2>
+        </div>
+      </div>
+    </section>
+
+    <section class="hs-plum" data-header="dark" aria-label="Every detail">
+      <div class="plum-panel" data-drift="-90">
+        <img class="bloom bloom-spray" src="./assets/bougainvillea-spray.webp" alt="" width="900" height="1200" data-drift="-40">
+        <figure class="plum-inset"><img src="./assets/1616486338812-3dadae4b4ace-1600.webp" alt="A calm living room with woven furniture and soft daylight" width="1600" height="900" loading="lazy"></figure>
+        <span class="plum-rail" aria-hidden="true"></span>
+      </div>
+      <figure class="plum-photo" data-drift="60"><img src="./assets/1600607687920-4e2a09cf159d-1600.webp" alt="A dining table beside an open staircase and tall windows" width="1600" height="1066" loading="lazy"></figure>
+      <div class="plum-copy">
+        <p class="display display-s" data-lines>Every home was chosen to feel elegant, intuitive and effortless to live in.</p>
+        <p class="hs-body">Teak and tile in Begumpet. A sundeck above Film Nagar. An orchard verandah in Shamshabad. Each home keeps its own character — and its own story.</p>
+        <p class="hs-small">Many homes offer a private pool, a workspace and pet-friendly grounds.</p>
+        <a class="hs-link" href="#/stays">View available homes</a>
+      </div>
+    </section>
+
+    <section class="hs-gallery" data-header="dark" aria-label="Inside the homes">
+      <figure class="swing-card" data-scene="swing"><img src="./assets/1616594039964-ae9021a400a0-2400.webp" srcset="./assets/1616594039964-ae9021a400a0-1600.webp 1600w, ./assets/1616594039964-ae9021a400a0-2400.webp 2400w" sizes="70vw" alt="A softly lit bedroom with sculptural brass lighting" width="2400" height="2400" loading="lazy"></figure>
+      <div class="pair">
+        <img class="bloom bloom-bush pair-bloom-left" src="./assets/bougainvillea-bush.webp" alt="" width="1600" height="900" data-drift="-30">
+        <figure class="pair-a" data-drift="-120"><img src="./assets/1600047509807-ba8f99d2cdde-1600.webp" alt="A modern home with timber cladding and a sunny lawn" width="1600" height="1342" loading="lazy"></figure>
+        <figure class="pair-b" data-drift="60"><img src="./assets/1523217582562-09d0def993a6-1600.webp" alt="A white house with a cypress tree against a blue sky" width="1600" height="1600" loading="lazy"></figure>
+        <img class="bloom bloom-bush bloom-flip pair-bloom-right" src="./assets/bougainvillea-bush.webp" alt="" width="1600" height="900" data-drift="-50">
+      </div>
+    </section>
+
+    <section class="hp" id="home-platform" data-header="dark" aria-label="Find and book a stay"></section>
   </main>
-  <footer class="site-footer environment section-pad" data-tone="red"><div class="footer-top"><a href="#top" class="footer-brand" aria-label="Hidden Stories home"><span class="brand-art brand-art-large"><img src="./assets/brand-frame.webp" alt="The original Hidden Stories launch logo" width="1080" height="1920" loading="lazy"></span></a><div class="footer-statement">Your stay.<br><em>Your story.</em><p>Villas, heritage homes & residences.<br>Hyderabad, India.</p></div><nav aria-label="Footer navigation"><a href="#collection">The collection ↗</a><a href="#story">Our story ↗</a><button class="film-trigger">Watch the film ▷</button><a href="https://www.hiddenstories.in/" target="_blank" rel="noopener noreferrer">Visit Hidden Stories ↗</a></nav></div><div class="footer-bottom"><span>© 2026 HIDDEN STORIES</span><span>YOUR STAY, YOUR STORY</span><a href="#top">Back to the beginning ↑</a></div></footer>
-
-  <dialog id="stay-dialog" class="stay-dialog" aria-labelledby="detail-title"><button class="dialog-close" data-close aria-label="Close property details">×</button><div id="property-detail"></div></dialog>
-  <dialog id="plan-dialog" class="plan-dialog" aria-labelledby="plan-title"><button class="dialog-close" data-close aria-label="Close stay planner">×</button><p class="eyebrow">A LITTLE TIME AWAY</p><h2 id="plan-title">Make room<br><em>for your story.</em></h2><p>Tell us where, when, and who is coming.</p><form id="plan-form"><label>Neighbourhood<select name="destination"><option value="">Anywhere in Hyderabad</option>Jubilee Hills</option>Gachibowli</option>Shamshabad</option>Banjara Hills</option>Begumpet</option>Film Nagar</option>Kokapet</option>HITEC City</option></select></label><div class="date-pair"><label>Arrival<input type="date" name="arrival" required></label><label>Departure<input type="date" name="departure" required></label></div><label>Guests<select name="guests"><option value="1">1 guest</option><option value="2" selected>2 guests</option><option value="4">4 guests</option><option value="6">6 guests</option><option value="8">8 guests</option><option value="10">10 guests</option><option value="12">12 guests</option></select></label><p class="form-error" aria-live="polite"></p><button type="submit" class="solid-button">Explore the collection <span>↗</span></button></form><p class="fine-print">Browse by location and guest capacity. Availability is confirmed by Hidden Stories.</p></dialog>
+  <div class="pf-view" id="app-view" data-header="dark" hidden></div>
+  <footer class="site-footer environment section-pad" data-header="light"><div class="footer-top"><a href="#/" class="footer-brand" aria-label="Hidden Stories home"><span class="brand-art brand-art-large"><img src="./assets/brand-frame.webp" alt="The original Hidden Stories launch logo" width="1080" height="1920" loading="lazy"></span></a><div class="footer-statement"><svg class="charminar" viewBox="0 0 200 230" aria-hidden="true"><path pathLength="1" d="M10 222H190M32 222V72M46 222V72M154 222V72M168 222V72M27 162H51M27 122H51M27 84H51M149 162H173M149 122H173M149 84H173M32 72C30 60 34 52 39 45C44 52 48 60 46 72M154 72C152 60 156 52 161 45C166 52 170 60 168 72M39 45V33M161 45V33M46 102H154M46 94H154M46 120H154M56 120V110Q62 101 68 110V120M74 120V110Q80 101 86 110V120M94 120V110Q100 101 106 110V120M114 120V110Q120 101 126 110V120M132 120V110Q138 101 144 110V120M74 222V172C74 154 88 142 100 134C112 142 126 154 126 172V222M81 222V174C81 159 91 149 100 142C109 149 119 159 119 174V222"/></svg>Your stay. <br><em>Your story.</em><p>Villas, heritage homes & residences. <br>Hyderabad, India.</p><p class="sign-off">Phir milenge. <span>See you again.</span></p></div><nav aria-label="Footer navigation"><a href="#/stays">The collection ↗</a><a href="#reasons">Our story ↗</a><button class="film-trigger">Watch the film ▷</button><a href="https://www.hiddenstories.in/" target="_blank" rel="noopener noreferrer">Visit Hidden Stories ↗</a></nav></div><div class="footer-bottom"><span>© 2026 HIDDEN STORIES</span><span>YOUR STAY, YOUR STORY</span><a href="#top">Back to the beginning ↑</a></div></footer>
   <dialog id="film-dialog" class="film-dialog" aria-label="Hidden Stories launch film"><button class="dialog-close" data-close aria-label="Close film">×</button><video controls playsinline preload="none" poster="./assets/film-poster.jpg"><source src="./assets/launch-film.mp4" type="video/mp4"></video></dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="book-bar" id="book-bar" inert>
+    <p><span class="book-bar-title">Your Hyderabad stay</span><span class="book-bar-price" id="book-bar-price">8 homes, from <strong>₹9,800</strong> a night</span></p>
+    <a class="book-bar-cta" href="#/stays">Check dates<span class="book-bar-long"> &amp; book</span></a>
+  </div>
+  <button class="to-top" id="to-top" type="button" aria-label="Back to top" inert><svg viewBox="0 0 48 48" aria-hidden="true"><circle class="to-top-track" cx="24" cy="24" r="22"/><circle class="to-top-ring" cx="24" cy="24" r="22" pathLength="1"/><path d="M24 31V17m-6 6 6-6 6 6"/></svg></button>
+  <div class="scroll-progress" aria-hidden="true"><i></i></div>
+  <div class="cursor-ring" aria-hidden="true"><span></span></div>
 </body>
 </html>

@@ -1,0 +1,76 @@
+rules_version = '2';
+
+// Hidden Stories — Firestore security rules.
+// Deploy from the Firebase console (Firestore → Rules) or with `firebase deploy --only firestore:rules`.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() { return request.auth != null; }
+    function isUser(uid) { return signedIn() && request.auth.uid == uid; }
+    function validText(value, max) { return value is string && value.size() > 0 && value.size() <= max; }
+
+    // Profiles and wishlists: only the account holder.
+    match /users/{uid} {
+      allow read, create, update: if isUser(uid);
+      allow delete: if false;
+    }
+
+    // Bookings: guests create and cancel their own; status changes beyond cancelling are for staff.
+    match /bookings/{bookingId} {
+      allow read: if signedIn() && resource.data.uid == request.auth.uid;
+      allow create: if isUser(request.resource.data.uid)
+        && request.resource.data.status in ['requested', 'reserved']
+        && request.resource.data.checkIn is string && request.resource.data.checkOut is string
+        && request.resource.data.checkOut > request.resource.data.checkIn
+        && request.resource.data.guests is int && request.resource.data.guests >= 1 && request.resource.data.guests <= 20
+        && request.resource.data.total is number && request.resource.data.total > 0
+        // The first night must be reserved in the same write, which blocks double bookings.
+        && existsAfter(/databases/$(database)/documents/nights/$(request.resource.data.stayId + '_' + request.resource.data.checkIn));
+      allow update: if signedIn() && resource.data.uid == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'cancelledAt'])
+        && request.resource.data.status == 'cancelled';
+      allow delete: if false;
+    }
+
+    // One document per booked night. Creating a night that already exists counts as an update and is refused.
+    match /nights/{nightId} {
+      allow read: if true;
+      allow create: if signedIn()
+        && request.resource.data.uid == request.auth.uid
+        && nightId == request.resource.data.stayId + '_' + request.resource.data.date;
+      allow delete: if signedIn() && resource.data.uid == request.auth.uid;
+      allow update: if false;
+    }
+
+    // Conversations with hosts. Thread ids are "<uid>_<stayId>".
+    match /threads/{threadId} {
+      allow get: if signedIn() && threadId.matches(request.auth.uid + '_.+');
+      allow list: if signedIn() && resource.data.uid == request.auth.uid;
+      allow create: if isUser(request.resource.data.uid) && threadId == request.auth.uid + '_' + request.resource.data.stayId;
+      allow update: if signedIn() && resource.data.uid == request.auth.uid
+        && request.resource.data.diff(resource.data).affectedKeys().hasOnly(['lastText', 'updatedAt']);
+      allow delete: if false;
+
+      // Guests can only post as the guest; host replies are written by staff (console or admin tools).
+      match /messages/{messageId} {
+        allow read: if signedIn() && threadId.matches(request.auth.uid + '_.+');
+        allow create: if signedIn() && threadId.matches(request.auth.uid + '_.+')
+          && request.resource.data.from == 'guest'
+          && request.resource.data.uid == request.auth.uid
+          && validText(request.resource.data.text, 2000);
+        allow update, delete: if false;
+      }
+    }
+
+    // Reviews are public; one per guest per stay (id "<stayId>_<uid>").
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow create, update: if signedIn()
+        && reviewId == request.resource.data.stayId + '_' + request.auth.uid
+        && request.resource.data.uid == request.auth.uid
+        && request.resource.data.rating is int && request.resource.data.rating >= 1 && request.resource.data.rating <= 5
+        && validText(request.resource.data.text, 1000);
+      allow delete: if signedIn() && resource.data.uid == request.auth.uid;
+    }
+  }
+}
